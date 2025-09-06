@@ -1,10 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+import axios from "axios";
+import { API_BASE } from "./components/api";
+
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -60,6 +63,14 @@ function PrivateRoute({ children }) {
 
 function App() {
   const [user, setUser] = useState(null);
+
+  // ✅ Wake up backend khi FE load
+  useEffect(() => {
+    axios
+      .get(API_BASE +"/api/ping")
+      .then(() => console.log("✅ Backend woke up"))
+      .catch(() => console.warn("⚠️ Backend not responding yet"));
+  }, []);
 
   return (
     <Router>
