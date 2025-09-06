@@ -3,6 +3,7 @@ import Button from "./ui/Button";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";
+import { API_BASE } from "./api";
 
 export default function Navbar({ aboutRef, servicesRef, contactRef }) {
   const [isOpen, setIsOpen] = useState(false);
