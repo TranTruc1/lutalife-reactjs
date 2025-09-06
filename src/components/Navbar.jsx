@@ -2,6 +2,7 @@ import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import Button from "./ui/Button";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import axios from "axios";
 
 export default function Navbar({ aboutRef, servicesRef, contactRef }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,15 @@ export default function Navbar({ aboutRef, servicesRef, contactRef }) {
       setIsOpen(false); // đóng menu mobile
     }
   };
+  const [user, setUser] = useState(null);
 
+  // ✅ Wake up backend khi FE load
+  useEffect(() => {
+    axios
+      .get(API_BASE +"/api/ping")
+      .then(() => console.log("✅ Backend woke up."))
+      .catch(() => console.warn("⚠️ Backend not responding yet"));
+  }, []);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsOpen(false);
