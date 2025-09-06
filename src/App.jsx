@@ -68,7 +68,7 @@ function App() {
   useEffect(() => {
     axios
       .get(API_BASE +"/api/ping")
-      .then(() => console.log("✅ Backend woke up"))
+      .then(() => console.log("✅ Backend woke up."))
       .catch(() => console.warn("⚠️ Backend not responding yet"));
   }, []);
 
