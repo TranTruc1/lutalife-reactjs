@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE } from "./api";
+import Navbar from "./Navbar";
 
 function Login({ onLogin }) {
   const [phone, setPhone] = useState("");
@@ -52,6 +53,9 @@ function Login({ onLogin }) {
   };
 
   return (
+    <div>
+    <Navbar />
+
     <div className="flex justify-center items-center min-h-screen bg-blue-50 px-4">
       <form
         onSubmit={handleSubmit}
@@ -90,6 +94,8 @@ function Login({ onLogin }) {
         </button>
       </form>
     </div>
+    </div>
+
   );
 }
 

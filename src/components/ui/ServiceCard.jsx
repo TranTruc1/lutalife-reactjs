@@ -1,27 +1,36 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import { FaWhatsapp } from "react-icons/fa";
 
-export default function ServiceCard({
-  imgSrc,
-  title,
-  description = "Lorem ipsum dolor sit amet, consecte tur adipiscing elit aliquet iTristique id nibh lobortis nunc",
-}) {
+export default function ServiceCard({ title, description, cover, slug }) {
   return (
-    <div className="flex max-w-[347px] flex-col items-center gap-6 rounded-3xl bg-white p-8 shadow-[0_24px_32px_-3px_rgba(3,9,50,0.04)] transition hover:rotate-3 hover:scale-105">
+    <div className="flex h-full flex-col items-center gap-6 rounded-3xl bg-white p-8 shadow transition hover:rotate-3 hover:scale-105">
+      {/* Ảnh full width nhưng giữ chiều cao tối đa */}
       <img
-        className="size-[200px] object-contain"
-        src={imgSrc || "/card-img-1.png"}
-        alt="Card"
+        className="w-full max-h-[200px] object-contain mx-auto"
+        src={cover}
+        alt={title}
       />
 
-      <div>
-        <h4 className="font-poppins text-2xl font-medium text-black">
+      <div className="flex-1 w-full">
+        <h4 className="font-poppins text-2xl font-medium text-black text-center">
           {title}
         </h4>
-        <p className="mt-3 text-sm text-para">{description}</p>
+        {/* ✅ mô tả căn phải, giới hạn 2 dòng */}
+        <p className="mt-3 text-sm text-para text-left line-clamp-2">
+          {description}
+        </p>
       </div>
 
-      <Button title="Book an Appoinment" className="w-full" Icon={FaWhatsapp} />
+      <Link to={`/services/${slug}`} className="w-full">
+        <Button
+          title="Tìm hiểu thêm"
+          Icon={FaWhatsapp}
+          className="w-full flex items-center justify-center gap-2 rounded-full 
+                     bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 
+                     font-medium text-white shadow hover:opacity-90 transition"
+        />
+      </Link>
     </div>
   );
 }

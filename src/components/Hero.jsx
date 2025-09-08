@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./ui"; // Giả sử đây là 1 custom button nhận prop onClick
+import { ButtonForm } from "./ui"; // Giả sử đây là 1 custom button nhận prop onClick
 import BookAnAppointment from "./BookAnAppointment";
 
 export default function Hero() {
@@ -21,7 +21,7 @@ export default function Hero() {
             eget vel, nunc nulla feugiat. Metus ut.
           </p>
           {/* Gọi setShowForm(true) khi click */}
-          <Button title="Đặt lịch tư vấn" onClick={() => setShowForm(true)} />
+          <ButtonForm title="Đặt lịch tư vấn" onClick={() => setShowForm(true)} />
         </div>
 
         <div className="max-h-[506px] max-w-[678px]">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "./api";
+import Navbar from "./Navbar";
 
 function AdminDashboard() {
   const [tab, setTab] = useState("appointments"); // mặc định cho editor
@@ -91,6 +92,8 @@ function AdminDashboard() {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="p-6">
       {/* Tabs */}
       <div className="flex gap-4 mb-6">
@@ -190,8 +193,7 @@ function AdminDashboard() {
                 <tr className="bg-gray-100">
                   <th className="border p-2">Tên</th>
                   <th className="border p-2">Số điện thoại</th>
-                  <th className="border p-2">Ngày</th>
-                  <th className="border p-2">Dịch vụ</th>
+                  <th className="border p-2">Địa chỉ</th>
                   <th className="border p-2">Ghi chú</th>
                 </tr>
               </thead>
@@ -200,8 +202,7 @@ function AdminDashboard() {
                   <tr key={a._id}>
                     <td className="border p-2">{a.name}</td>
                     <td className="border p-2">{a.phone}</td>
-                    <td className="border p-2">{new Date(a.date).toLocaleDateString()}</td>
-                    <td className="border p-2">{a.service}</td>
+                    <td className="border p-2">{a.address}</td>
                     <td className="border p-2">{a.note}</td>
                   </tr>
                 ))}
@@ -211,6 +212,8 @@ function AdminDashboard() {
         </>
       )}
     </div>
+    </div>
+
   );
 }
 

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { LuMessageCircle } from "react-icons/lu";
-import BookAnAppointment from "../BookAnAppointment"; // đổi path nếu cần
 
 export default function Button({
-  title = "Book Now",
+  title = "Liên hệ thăm khám",
   Icon = LuMessageCircle,
   className = "",
 }) {
@@ -22,11 +21,6 @@ export default function Button({
         <Icon className="size-6" />
         {title}
       </button>
-
-      {/* Hiển thị form popup nếu showForm = true */}
-      {showForm && (
-        <BookAnAppointment onClose={() => setShowForm(false)} />
-      )}
     </>
   );
 }

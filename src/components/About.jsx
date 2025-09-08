@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./ui";
+import { ButtonForm } from "./ui";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function About() {
@@ -26,7 +26,7 @@ export default function About() {
           elementum. Tellus quam mauris aenean turpis vulputate sodales nullam
           lobortis. Vulputate tortor tincidun.
         </p>
-        <Button title="Book an appointment" Icon={FaWhatsapp} />
+        <ButtonForm title="Book an appointment" Icon={FaWhatsapp} />
       </div>
     </div>
   );

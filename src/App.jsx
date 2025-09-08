@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import { API_BASE } from "./components/api";
+import ServiceDetail from "./components/ServiceDetail"
 
 
 import Navbar from "./components/Navbar";
@@ -21,6 +22,7 @@ import Login from "./components/Login";
 // Trang admin
 import AdminUsers from "./components/AdminUsers";
 import AdminAppointments from "./components/AppointmentsPage";
+import Editor from "./components/Editor";
 
 function MainPage() {
   const aboutRef = useRef(null);
@@ -75,7 +77,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/" element={<MainPage />} />
+        <Route path="/ngungonzzxz" element={<Editor />} />
         <Route
           path="/login"
           element={

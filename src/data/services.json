@@ -1,0 +1,385 @@
+[
+  {
+    "id": "general-checkup-2",
+    "slug": "kham-tong-quat-2",
+    "title": "Khám tổng quát-2",
+    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
+    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tại sao nên khám tổng quát định kỳ?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "caption": "Video giới thiệu dịch vụ"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "paragraph",
+        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "Thời gian: 60–90 phút",
+          "Kết quả: trả trong ngày",
+          "Tư vấn sau khám: 15–20 phút"
+        ]
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Thiết bị đo huyết áp",
+            "caption": "Thiết bị chuẩn y khoa."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Phòng xét nghiệm",
+            "caption": "Phòng xét nghiệm vô khuẩn."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Bác sĩ nội tổng quát",
+            "caption": "Đội ngũ nhiều kinh nghiệm."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "general-checkup",
+    "slug": "kham-tong-quat",
+    "title": "Khám tổng quát",
+    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
+    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tại sao nên khám tổng quát định kỳ?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "paragraph",
+        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+      },
+      {
+        "type": "paragraph",
+        "text": "2 - Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "Thời gian: 60–90 phút",
+          "Kết quả: trả trong ngày",
+          "Tư vấn sau khám: 15–20 phút"
+        ]
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Thiết bị đo huyết áp",
+            "caption": "Thiết bị chuẩn y khoa."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Phòng xét nghiệm",
+            "caption": "Phòng xét nghiệm vô khuẩn."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Bác sĩ nội tổng quát",
+            "caption": "Đội ngũ nhiều kinh nghiệm."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dental-care",
+    "slug": "cham-soc-rang-mieng",
+    "title": "Chăm sóc răng miệng",
+    "excerpt": "Cạo vôi, đánh bóng, tư vấn chăm sóc răng miệng cá nhân hóa.",
+    "cover": "https://images.unsplash.com/photo-1583336663277-620dc1996580?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Quy trình cạo vôi – đánh bóng"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sử dụng sóng siêu âm để loại bỏ mảng bám, sau đó đánh bóng giúp bề mặt răng láng mịn."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1588771930297-3b8b8b8a3b2f?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Dụng cụ nha khoa",
+        "caption": "Dụng cụ được tiệt khuẩn theo chuẩn."
+      },
+      {
+        "type": "paragraph",
+        "text": "Bệnh nhân được hướng dẫn chải răng theo phương pháp Bass, dùng chỉ nha khoa và nước súc miệng."
+      }
+    ]
+  },
+  {
+    "id": "pediatrics",
+    "slug": "nhi-khoa",
+    "title": "Nhi khoa",
+    "excerpt": "Khám trẻ em: phát triển thể chất, tư vấn dinh dưỡng, tiêm chủng.",
+    "cover": "https://images.unsplash.com/photo-1582719478250-e4d7a1f0d2e7?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Theo dõi tăng trưởng & dinh dưỡng"
+      },
+      {
+        "type": "paragraph",
+        "text": "Đánh giá chỉ số BMI, vòng đầu, biểu đồ tăng trưởng WHO; tư vấn thực đơn theo tuổi."
+      },
+      {
+        "type": "quote",
+        "text": "“Phát hiện sớm – can thiệp sớm.”",
+        "by": "BS. CKI Nhi"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khu vực khám riêng cho trẻ với không gian thân thiện, hạn chế lo lắng khi thăm khám."
+      }
+    ]
+  },
+  {
+    "id": "general-checkup-2",
+    "slug": "kham-tong-quat-2",
+    "title": "Khám tổng quát-3",
+    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
+    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tại sao nên khám tổng quát định kỳ?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "caption": "Video giới thiệu dịch vụ"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
+        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+      },
+      {
+        "type": "paragraph",
+        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "Thời gian: 60–90 phút",
+          "Kết quả: trả trong ngày",
+          "Tư vấn sau khám: 15–20 phút"
+        ]
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Thiết bị đo huyết áp",
+            "caption": "Thiết bị chuẩn y khoa."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Phòng xét nghiệm",
+            "caption": "Phòng xét nghiệm vô khuẩn."
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Bác sĩ nội tổng quát",
+            "caption": "Đội ngũ nhiều kinh nghiệm."
+          }
+        ]
+      }
+    ]
+  },
+    {
+    "id": "hypertension-elderly",
+    "slug": "huyet-ap-o-nguoi-lon-tuoi",
+    "title": "Bệnh huyết áp ở người lớn tuổi",
+    "excerpt": "Huyết áp cao là một trong những bệnh mạn tính phổ biến ở người cao tuổi, cần được phát hiện sớm và kiểm soát tốt để giảm nguy cơ biến chứng tim mạch, đột quỵ.",
+    "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Blood_pressure_cuff.jpg/640px-Blood_pressure_cuff.jpg",
+    "blocks": [
+      {
+        "type": "quote",
+        "text": "Huyết áp cao là gì",
+        "by": "trúc"
+      },
+      {
+        "type": "paragraph",
+        "text": "Huyết áp cao (tăng huyết áp) là tình trạng áp lực máu tác động lên thành động mạch luôn ở mức cao hơn bình thường. Nếu kéo dài, nó có thể làm tổn thương tim, não, thận và mạch máu."
+      },
+      {
+        "type": "image",
+        "url": "https://toshiko.vn/storage/images/2021/02/chi-so-huyet-ap.jpg",
+        "alt": "Minh họa tăng huyết áp",
+        "caption": "Sơ đồ minh họa ảnh hưởng của huyết áp cao."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Nguyên nhân thường gặp ở người lớn tuổi"
+      },
+      {
+        "type": "list",
+        "style": "ordered",
+        "items": [
+          "Thành mạch máu kém đàn hồi do lão hóa",
+          "Chế độ ăn nhiều muối, ít rau quả",
+          "Ít vận động thể chất",
+          "Béo phì hoặc thừa cân",
+          "Căng thẳng kéo dài"
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Triệu chứng thường gặp"
+      },
+      {
+        "type": "paragraph",
+        "text": "Huyết áp cao đôi khi không có triệu chứng rõ rệt. Một số người có thể gặp: đau đầu, chóng mặt, hoa mắt, khó thở, mệt mỏi."
+      },
+      {
+        "type": "paragraph"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Biến chứng nguy hiểm"
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "Đột quỵ",
+          "Nhồi máu cơ tim",
+          "Suy tim",
+          "Suy thận mạn",
+          "Mất trí nhớ"
+        ]
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "https://360vds.viettel.vn/uploads/360vds.viettel.vn/4/nhoi-mau-co-tim.jpeg"
+          },
+          {
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiIGHZOWpFbh-4jpDa7XWWNWSaFlQFjmr9Hw&s"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Cách phòng ngừa và kiểm soát"
+      },
+      {
+        "type": "list",
+        "style": "ordered",
+        "items": [
+          "Ăn uống lành mạnh: giảm muối, tăng rau quả, hạn chế mỡ động vật.",
+          "Duy trì cân nặng hợp lý, tránh béo phì.",
+          "Tập thể dục đều đặn, ít nhất 30 phút/ngày.",
+          "Hạn chế rượu bia, bỏ thuốc lá.",
+          "Kiểm tra huyết áp định kỳ và tuân thủ điều trị theo chỉ định của bác sĩ."
+        ]
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/-7XZ5nDKS0M",
+        "caption": "Video hướng dẫn cách đo huyết áp tại nhà."
+      },
+      {
+        "type": "paragraph",
+        "text": ""
+      }
+    ]
+  }
+]
+
+
+

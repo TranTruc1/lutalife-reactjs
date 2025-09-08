@@ -1,0 +1,61 @@
+[
+  {
+    "id": "unique-id",              // định danh duy nhất
+    "slug": "duong-dan-url",        // dùng cho URL (/services/:slug)
+    "title": "Tên dịch vụ",         // tiêu đề hiển thị
+    "excerpt": "Mô tả ngắn",        // đoạn mô tả tóm tắt
+    "cover": "link-anh-cover.jpg",  // ảnh cover chính
+    "blocks": [                     // nội dung chi tiết
+      {
+        "type": "heading",          // tiêu đề
+        "level": 2,                 // cấp tiêu đề: 2, 3, 4
+        "text": "Nội dung tiêu đề"
+      },
+      {
+        "type": "paragraph",        // đoạn văn bản
+        "text": "Nội dung đoạn văn"
+      },
+      {
+        "type": "image",            // ảnh đơn
+        "url": "link-anh.jpg",
+        "alt": "Mô tả ảnh",
+        "caption": "Chú thích (tuỳ chọn)"
+      },
+      {
+        "type": "list",             // danh sách
+        "style": "unordered",       // unordered = dấu chấm, ordered = số thứ tự
+        "items": [
+          "Mục 1",
+          "Mục 2"
+        ]
+      },
+      {
+        "type": "quote",            // trích dẫn
+        "text": "Nội dung trích dẫn",
+        "by": "Tác giả / Người nói"
+      },
+      {
+        "type": "gallery",          // bộ sưu tập nhiều ảnh
+        "images": [
+          {
+            "url": "link-anh-1.jpg",
+            "alt": "Mô tả ảnh",
+            "caption": "Chú thích"
+          },
+          {
+            "url": "link-anh-2.jpg",
+            "alt": "Mô tả ảnh",
+            "caption": "Chú thích"
+          }
+        ]
+      },
+      {
+        "type": "video",            // video (hỗ trợ YouTube, Vimeo, MP4/WebM)
+        "url": "https://youtube.com/embed/xxxx hoặc /videos/demo.mp4",
+        "caption": "Chú thích video"
+      }
+    ]
+  }
+]
+
+Trong JSON, nếu muốn xuống dòng trong 1 block văn bản, thì không nhất thiết phải tạo thêm object mới, chỉ cần dùng ký tự \n trong chuỗi.
