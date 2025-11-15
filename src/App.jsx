@@ -77,7 +77,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route path="/:slug" element={<ServiceDetail />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/ngungonzzxz" element={<Editor />} />
         <Route

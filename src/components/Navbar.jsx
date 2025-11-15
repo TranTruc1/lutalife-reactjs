@@ -24,7 +24,7 @@ export default function Navbar({ aboutRef, servicesRef, contactRef }) {
         <a href="/">
           <img
             className="h-[50px] w-[146px] object-contain"
-            src="/logo.svg"
+            src="/logo.png"
             alt="Logo"
           />
         </a>

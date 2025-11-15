@@ -15,18 +15,15 @@ export default function About() {
 
       <div className="flex flex-col items-start gap-4">
         <h5 className="font-poppins text-[22px] font-medium tracking-[0.44px] text-secondary">
-          About me
+          Dr. Matthew Anderson
         </h5>
         <h1 className="max-w-[485px] font-poppins text-[32px] font-semibold leading-normal text-[#031432]">
-          A dedicated doctor with the core mission to help
+          Chuyên gia sức khỏe Hoa Kỳ
         </h1>
         <p className="mb-4 max-w-[485px] text-para">
-          orem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin
-          nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis nunc
-          elementum. Tellus quam mauris aenean turpis vulputate sodales nullam
-          lobortis. Vulputate tortor tincidun.
+          Người đứng đầu nhóm nghiên cứu Luta Life – với sứ mệnh hỗ trợ hàng triệu người kiểm soát huyết áp tự nhiên.
         </p>
-        <ButtonForm title="Book an appointment" Icon={FaWhatsapp} />
+        <ButtonForm title="Đặt lịch khám miễn phí!" Icon={FaWhatsapp} />
       </div>
     </div>
   );

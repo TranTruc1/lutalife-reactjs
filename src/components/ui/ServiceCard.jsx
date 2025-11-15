@@ -22,7 +22,7 @@ export default function ServiceCard({ title, description, cover, slug }) {
         </p>
       </div>
 
-      <Link to={`/services/${slug}`} className="w-full">
+      <Link to={`/${slug}`} className="w-full">
         <Button
           title="Tìm hiểu thêm"
           Icon={FaWhatsapp}
