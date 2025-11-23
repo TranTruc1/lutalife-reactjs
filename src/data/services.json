@@ -1,385 +1,424 @@
 [
   {
-    "id": "general-checkup-3",
-    "slug": "kham-tong-quat-3",
-    "title": "Khám tổng quát-3",
-    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
-    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
+    "id": "intro-luta-life-us-market",
+    "slug": "gioi-thieu-luta-life-noi-dia-my",
+    "title": "LUTA LIFE - BLOOD PRESSURE SUPPORT",
+    "excerpt": "Sản phẩm hỗ trợ huyết áp 'Made in USA' chính hiệu, được nghiên cứu và sản xuất ngay tại Hoa Kỳ, dành riêng cho người Mỹ và cộng đồng Việt Kiều.",
+    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866288/580985362_122193845528553408_2707668903038540276_n_sp68hd.jpg",
     "blocks": [
       {
         "type": "heading",
         "level": 2,
-        "text": "Tại sao nên khám tổng quát định kỳ?"
+        "text": "Đẳng cấp sản phẩm sản xuất tại Mỹ (Made in USA)"
       },
       {
         "type": "paragraph",
-        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
+        "text": "Tại đất nước cờ hoa, nơi có nền y học và tiêu chuẩn dược phẩm khắt khe bậc nhất thế giới, **LUTA LIFE - BLOOD PRESSURE SUPPORT** ra đời như một minh chứng cho chất lượng vượt trội. Đây không phải là hàng nhập khẩu từ nước thứ ba, mà là sản phẩm **Nội địa Mỹ 100%**, được sản xuất trực tiếp tại các nhà máy dược phẩm đạt chuẩn FDA ngay trên đất Mỹ."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866879/536264386_122181048038553408_1729114713008213031_n_1_jmgine.png",
+        "alt": "Sản phẩm Luta Life nội địa Mỹ",
+        "caption": "Sản phẩm chính gốc Hoa Kỳ - Phục vụ cộng đồng người Việt tại Mỹ."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sản phẩm được phát triển để giải quyết các vấn đề sức khỏe tim mạch đặc thù của người sinh sống tại Mỹ: áp lực công việc cao, chế độ ăn nhiều thức ăn nhanh (fast food), đồ muối mặn và lối sống ít vận động. LUTA LIFE là sự kết hợp hoàn hảo giữa công nghệ bào chế tân tiến của Mỹ và tinh hoa thảo dược phương Đông, mang lại sự an tâm tuyệt đối cho người sử dụng."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Lựa chọn hàng đầu cho cộng đồng Việt tại Mỹ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Đối với cô bác, anh chị người Việt đang sinh sống, làm việc tại 50 tiểu bang, việc tìm kiếm một sản phẩm vừa có tiếng Anh chuẩn y khoa, vừa có hướng dẫn tiếng Việt, lại phù hợp với cơ địa người Á Đông là điều không dễ dàng. LUTA LIFE chính là câu trả lời hoàn hảo:"
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "**Sản xuất tại Mỹ, nguồn gốc rõ ràng:** Sản xuất và phân phối trực tiếp tại Mỹ, không qua trung gian, đảm bảo chất lượng tươi mới nhất.",
+          "**Tiêu chuẩn kép:** Vừa đáp ứng quy định FDA Hoa Kỳ, vừa phù hợp với thể trạng người Việt.",
+          "**Uy tín và chất lượng:** Giao hàng nhanh chóng (Shipping) đến tận nhà trên khắp các bang từ California, Texas đến Florida... Được cam kết về độ hiệu quả và sự an toàn."
+        ]
       },
       {
         "type": "video",
-        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "caption": "Video giới thiệu dịch vụ"
-      },
+        "url": "https://www.youtube.com/embed/example_us_factory",
+        "caption": "Tham quan quy trình sản xuất tại nhà máy ở Mỹ."
+      }
+    ]
+  },
+  {
+    "id": "complications-stroke-heart-health",
+    "slug": "bien-chung-cao-huyet-ap-dot-quy-suy-tim",
+    "title": "Cao Huyết Áp - Biến chứng dẫn đến tử vong",
+    "excerpt": "Đừng để sự chủ quan giết chết bạn! Phân tích chi tiết quá trình tàn phá cơ thể của Cao huyết áp: Từ vỡ mạch máu não, trụy tim đến suy thận mạn tính.",
+    "cover": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
       {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+        "type": "heading",
+        "level": 2,
+        "text": "Cao Huyết Áp - Sát thủ giấu mặt (The Silent Killer)"
       },
       {
         "type": "paragraph",
-        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+        "text": "Cao huyết áp không đơn thuần là những con số đo được trên máy. Đó là một áp lực vật lý khủng khiếp liên tục đè nặng lên hệ thống mạch máu 24/7. Tại Mỹ, cứ 3 người trưởng thành thì có 1 người bị cao huyết áp. Điều đáng sợ nhất là bệnh diễn tiến âm thầm, không có triệu chứng rõ rệt cho đến khi cơ thể 'sụp đổ' bởi những biến chứng kinh hoàng sau đây:"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "1. Đột quỵ (Stroke) - Biến chứng nguy hiểm nhất"
+      },
+      {
+        "type": "paragraph",
+        "text": "Cao huyết áp là thủ phạm của 80% các ca đột quỵ. Áp lực máu quá lớn làm thành mạch máu não bị yếu đi, phình ra và có thể vỡ bất cứ lúc nào (Xuất huyết não). Đồng thời, nó thúc đẩy quá trình xơ vữa, tạo cục máu đông làm tắc nghẽn dòng chảy (Nhồi máu não)."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Stroke diagram",
+        "caption": "Mô phỏng mạch máu não bị tắc nghẽn gây đột quỵ."
       },
       {
         "type": "list",
         "style": "unordered",
         "items": [
-          "Thời gian: 60–90 phút",
-          "Kết quả: trả trong ngày",
-          "Tư vấn sau khám: 15–20 phút"
+          "**Dấu hiệu báo trước:** Tê yếu tay chân một bên, méo miệng, nói ngọng, đau đầu dữ dội không rõ nguyên nhân.",
+          "**Hậu quả:** Tử vong nhanh chóng hoặc để lại di chứng nặng nề như liệt nửa người, sống thực vật, trở thành gánh nặng cho gia đình."
         ]
       },
-      {
-        "type": "gallery",
-        "images": [
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Thiết bị đo huyết áp",
-            "caption": "Thiết bị chuẩn y khoa."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Phòng xét nghiệm",
-            "caption": "Phòng xét nghiệm vô khuẩn."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Bác sĩ nội tổng quát",
-            "caption": "Đội ngũ nhiều kinh nghiệm."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "general-checkup",
-    "slug": "kham-tong-quat",
-    "title": "Khám tổng quát",
-    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
-    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
-    "blocks": [
       {
         "type": "heading",
-        "level": 2,
-        "text": "Tại sao nên khám tổng quát định kỳ?"
+        "level": 3,
+        "text": "2. Suy tim & Nhồi máu cơ tim (Heart Failure)"
       },
       {
         "type": "paragraph",
-        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
+        "text": "Hãy tưởng tượng trái tim bạn như một chiếc máy bơm. Khi huyết áp cao, chiếc máy bơm này phải gồng mình hoạt động hết công suất để thắng được sức cản trong lòng mạch. Theo thời gian, cơ tim bị dày lên (dày thất trái), tim to ra và dần dần suy yếu, mất khả năng bơm máu."
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
+        "url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Heart Anatomy",
+        "caption": "Trái tim bị tổn thương do áp lực máu quá cao kéo dài."
       },
       {
         "type": "paragraph",
-        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+        "text": "Đặc biệt, người Việt tại Mỹ tiêu thụ nhiều đồ ăn nhanh chứa chất béo bão hòa, dẫn đến **Xơ vữa động mạch vành**. Khi mảng xơ vữa nứt vỡ, nó chặn đứng đường nuôi tim, gây ra cơn **Nhồi máu cơ tim** cấp tính, cướp đi sinh mạng chỉ trong vài phút."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "3. Mỡ máu cao & Xơ vữa động mạch"
       },
       {
         "type": "paragraph",
-        "text": "2 - Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
+        "text": "Cao huyết áp và Mỡ máu (Cholesterol) là 'đôi bạn cùng tiến' hủy hoại cơ thể. Huyết áp cao làm tổn thương lớp lót trong thành mạch, tạo điều kiện cho Cholesterol xấu (LDL) xâm nhập và tích tụ, hình thành các mảng xơ vữa cứng."
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Artery Plaque",
+        "caption": "Mảng xơ vữa làm hẹp lòng mạch, cản trở lưu thông máu."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "4. Rối loạn tiền đình & Thiếu máu não mãn tính"
+      },
+      {
+        "type": "paragraph",
+        "text": "Đây là tình trạng phổ biến nhưng hay bị bỏ qua. Khi mạch máu bị hẹp, lượng máu và oxy lên não không đủ, gây ra:"
       },
       {
         "type": "list",
         "style": "unordered",
         "items": [
-          "Thời gian: 60–90 phút",
-          "Kết quả: trả trong ngày",
-          "Tư vấn sau khám: 15–20 phút"
+          "Chóng mặt, hoa mắt, tối sầm mặt mũi khi thay đổi tư thế.",
+          "Ù tai, mất thăng bằng, cảm giác nhà cửa đảo lộn.",
+          "Mất ngủ, suy giảm trí nhớ trầm trọng và hội chứng 'sương mù não' (Brain fog)."
         ]
       },
-      {
-        "type": "gallery",
-        "images": [
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Thiết bị đo huyết áp",
-            "caption": "Thiết bị chuẩn y khoa."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Phòng xét nghiệm",
-            "caption": "Phòng xét nghiệm vô khuẩn."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Bác sĩ nội tổng quát",
-            "caption": "Đội ngũ nhiều kinh nghiệm."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "dental-care",
-    "slug": "cham-soc-rang-mieng",
-    "title": "Chăm sóc răng miệng",
-    "excerpt": "Cạo vôi, đánh bóng, tư vấn chăm sóc răng miệng cá nhân hóa.",
-    "cover": "https://images.unsplash.com/photo-1583336663277-620dc1996580?q=80&w=1600&auto=format&fit=crop",
-    "blocks": [
       {
         "type": "heading",
-        "level": 2,
-        "text": "Quy trình cạo vôi – đánh bóng"
+        "level": 3,
+        "text": "5. Suy thận & Tổn thương đáy mắt"
       },
       {
         "type": "paragraph",
-        "text": "Sử dụng sóng siêu âm để loại bỏ mảng bám, sau đó đánh bóng giúp bề mặt răng láng mịn."
+        "text": "Ít ai biết rằng thận là cơ quan chịu ảnh hưởng nặng nề thứ hai sau tim. Hệ thống mạch máu nhỏ trong thận bị áp lực phá hủy, làm mất khả năng lọc chất độc, dẫn đến **Suy thận mạn tính** phải chạy thận nhân tạo. Ngoài ra, cao huyết áp còn gây xuất huyết võng mạc, dẫn đến mờ mắt hoặc mù lòa."
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1588771930297-3b8b8b8a3b2f?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Dụng cụ nha khoa",
-        "caption": "Dụng cụ được tiệt khuẩn theo chuẩn."
-      },
-      {
-        "type": "paragraph",
-        "text": "Bệnh nhân được hướng dẫn chải răng theo phương pháp Bass, dùng chỉ nha khoa và nước súc miệng."
-      }
-    ]
-  },
-  {
-    "id": "pediatrics",
-    "slug": "nhi-khoa",
-    "title": "Nhi khoa",
-    "excerpt": "Khám trẻ em: phát triển thể chất, tư vấn dinh dưỡng, tiêm chủng.",
-    "cover": "https://images.unsplash.com/photo-1582719478250-e4d7a1f0d2e7?q=80&w=1600&auto=format&fit=crop",
-    "blocks": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Theo dõi tăng trưởng & dinh dưỡng"
-      },
-      {
-        "type": "paragraph",
-        "text": "Đánh giá chỉ số BMI, vòng đầu, biểu đồ tăng trưởng WHO; tư vấn thực đơn theo tuổi."
-      },
-      {
-        "type": "quote",
-        "text": "“Phát hiện sớm – can thiệp sớm.”",
-        "by": "BS. CKI Nhi"
-      },
-      {
-        "type": "paragraph",
-        "text": "Khu vực khám riêng cho trẻ với không gian thân thiện, hạn chế lo lắng khi thăm khám."
-      }
-    ]
-  },
-  {
-    "id": "general-checkup-2",
-    "slug": "kham-tong-quat-2",
-    "title": "Khám tổng quát-3",
-    "excerpt": "Gói khám toàn diện: xét nghiệm cơ bản, đo huyết áp, tư vấn dinh dưỡng.",
-    "cover": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
-    "blocks": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Tại sao nên khám tổng quát định kỳ?"
-      },
-      {
-        "type": "paragraph",
-        "text": "Khám định kỳ giúp phát hiện sớm các nguy cơ về tim mạch, chuyển hóa và hô hấp. Quy trình gọn, có kết quả trong ngày."
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "caption": "Video giới thiệu dịch vụ"
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "image",
-        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Bác sĩ đang tư vấn kết quả cho bệnh nhân",
-        "caption": "Tư vấn 1:1 cùng bác sĩ nội tổng quát."
-      },
-      {
-        "type": "paragraph",
-        "text": "Gói khám gồm: công thức máu, đường huyết, mỡ máu, chức năng gan thận, X-quang ngực và đo điện tim."
-      },
-      {
-        "type": "list",
-        "style": "unordered",
-        "items": [
-          "Thời gian: 60–90 phút",
-          "Kết quả: trả trong ngày",
-          "Tư vấn sau khám: 15–20 phút"
-        ]
-      },
-      {
-        "type": "gallery",
-        "images": [
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Thiết bị đo huyết áp",
-            "caption": "Thiết bị chuẩn y khoa."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1582719478250-7b38ce5c7d5e?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Phòng xét nghiệm",
-            "caption": "Phòng xét nghiệm vô khuẩn."
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1600&auto=format&fit=crop",
-            "alt": "Bác sĩ nội tổng quát",
-            "caption": "Đội ngũ nhiều kinh nghiệm."
-          }
-        ]
-      }
-    ]
-  },
-    {
-    "id": "hypertension-elderly",
-    "slug": "huyet-ap-o-nguoi-lon-tuoi",
-    "title": "Bệnh huyết áp ở người lớn tuổi",
-    "excerpt": "Huyết áp cao là một trong những bệnh mạn tính phổ biến ở người cao tuổi, cần được phát hiện sớm và kiểm soát tốt để giảm nguy cơ biến chứng tim mạch, đột quỵ.",
-    "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Blood_pressure_cuff.jpg/640px-Blood_pressure_cuff.jpg",
-    "blocks": [
-      {
-        "type": "quote",
-        "text": "Huyết áp cao là gì",
-        "by": "trúc"
-      },
-      {
-        "type": "paragraph",
-        "text": "Huyết áp cao (tăng huyết áp) là tình trạng áp lực máu tác động lên thành động mạch luôn ở mức cao hơn bình thường. Nếu kéo dài, nó có thể làm tổn thương tim, não, thận và mạch máu."
-      },
-      {
-        "type": "image",
-        "url": "https://toshiko.vn/storage/images/2021/02/chi-so-huyet-ap.jpg",
-        "alt": "Minh họa tăng huyết áp",
-        "caption": "Sơ đồ minh họa ảnh hưởng của huyết áp cao."
+        "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Doctor checking patient",
+        "caption": "Kiểm tra sức khỏe định kỳ để phát hiện biến chứng sớm."
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "Nguyên nhân thường gặp ở người lớn tuổi"
+        "text": "LUTA LIFE - Chặn đứng nguy cơ từ gốc"
+      },
+      {
+        "type": "paragraph",
+        "text": "Hiểu rõ cơ chế bệnh sinh phức tạp này, **LUTA LIFE** mang đến giải pháp tác động đa chiều:"
       },
       {
         "type": "list",
         "style": "ordered",
         "items": [
-          "Thành mạch máu kém đàn hồi do lão hóa",
-          "Chế độ ăn nhiều muối, ít rau quả",
-          "Ít vận động thể chất",
-          "Béo phì hoặc thừa cân",
-          "Căng thẳng kéo dài"
+          "**Làm sạch lòng mạch:** Giảm Cholesterol, ngăn ngừa hình thành mảng xơ vữa.",
+          "**Bền thành mạch:** Dưỡng chất từ Hoa Hòe và Rutin giúp mạch máu dẻo dai, chịu được áp lực, chống nứt vỡ.",
+          "**Bơm máu lên não:** Citicoline và Bạch quả thúc đẩy tuần hoàn, xóa tan các triệu chứng tiền đình.",
+          "**Ổn định huyết áp:** Giữ chỉ số ở mức an toàn, giảm tải áp lực cho Tim và Thận."
         ]
       },
       {
+        "type": "paragraph",
+        "text": "*Sức khỏe là vàng. Đừng đợi đến khi đột quỵ gõ cửa mới tìm cách chữa trị!*"
+      }
+    ]
+  },
+  {
+    "id": "ingredients-us-standard",
+    "slug": "thanh-phan-chuan-my",
+    "title": "Bảng thành phần 'Chuẩn Mỹ' - Tinh khiết và An toàn",
+    "excerpt": "Khám phá công thức độc quyền kết hợp Citicoline và Thảo dược, sử dụng nguồn nguyên liệu cao cấp nhất được tuyển chọn tại Hoa Kỳ.",
+    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867900/Lovepik_com-602846924-hexagonal-geometric-pattern-on-light-blue-background_qzoaog.jpg",
+    "blocks": [
+      {
         "type": "heading",
         "level": 2,
-        "text": "Triệu chứng thường gặp"
+        "text": "Nguyên liệu sạch - Công nghệ xanh của Mỹ"
       },
       {
         "type": "paragraph",
-        "text": "Huyết áp cao đôi khi không có triệu chứng rõ rệt. Một số người có thể gặp: đau đầu, chóng mặt, hoa mắt, khó thở, mệt mỏi."
-      },
-      {
-        "type": "paragraph"
+        "text": "Điều làm nên sự khác biệt của LUTA LIFE so với các sản phẩm trôi nổi khác chính là nguồn nguyên liệu. Tại Mỹ, các quy định về độ tinh khiết của dược liệu là cực kỳ nghiêm ngặt. Mỗi thành phần trong LUTA LIFE đều phải trải qua quá trình sàng lọc, kiểm tra dư lượng kim loại nặng và vi sinh vật trước khi đưa vào sản xuất."
       },
       {
         "type": "heading",
-        "level": 2,
-        "text": "Biến chứng nguy hiểm"
+        "level": 3,
+        "text": "1. Sức mạnh bảo vệ não bộ (Brain Health)"
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870330/5fdbd4e8-0d98-4500-8f46-f2aa82a42132.png",
+        "alt": "Ingredient Facts",
+        "caption": "Bảng thành phần (Supplement Facts) minh bạch."
+      },
+      {
+        "type": "paragraph",
+        "text": "**Citicoline (300mg):** Đây là hàm lượng chuẩn được các nhà khoa học Mỹ khuyến nghị để phục hồi chức năng não bộ. Citicoline giúp tăng cường sự minh mẫn, giảm thiểu tình trạng 'sương mù não' (brain fog) và đau đầu do thiếu máu não - tình trạng rất phổ biến ở người làm việc căng thẳng tại Mỹ."
+      },
+      {
+        "type": "paragraph",
+        "text": "**Ginkgo Biloba (100mg):** Chiết xuất Bạch quả tiêu chuẩn hóa, giúp khơi thông dòng chảy của máu lên não, giảm chóng mặt và cải thiện trí nhớ cho người cao tuổi."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "2. Hợp chất thảo dược hạ áp (Blood Pressure Support)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sự kết hợp giữa tri thức Đông Y và công nghệ chiết xuất Tây Y tạo nên hiệu quả vượt trội:"
       },
       {
         "type": "list",
         "style": "unordered",
         "items": [
-          "Đột quỵ",
-          "Nhồi máu cơ tim",
-          "Suy tim",
-          "Suy thận mạn",
-          "Mất trí nhớ"
+          "**Japanese Pagoda Tree (Hoa Hòe - 150mg):** Cung cấp Rutin tự nhiên giúp làm bền thành mạch, ngăn ngừa vỡ mạch máu não.",
+          "**Hibiscus Flower (Hoa Dâm Bụt - 150mg):** Thảo dược được Hiệp hội Tim mạch Hoa Kỳ (AHA) công nhận về khả năng hỗ trợ kiểm soát huyết áp tâm thu và tâm trương hiệu quả.",
+          "**Rutin (50mg):** Tăng cường sức chịu đựng của mao mạch."
         ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "3. Vi chất thiết yếu (Essential Nutrients)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Bổ sung **Magnesium, Potassium (Kali), Vitamin D3, B9, B12** giúp cân bằng điện giải, bảo vệ nhịp tim và ngăn ngừa nguy cơ đột quỵ do thiếu hụt dinh dưỡng."
       },
       {
         "type": "gallery",
         "images": [
           {
-            "url": "https://360vds.viettel.vn/uploads/360vds.viettel.vn/4/nhoi-mau-co-tim.jpeg"
+            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870423/f6498d2e-7dbb-4dac-ab0b-28dd1c7aa729.png"
           },
           {
-            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiIGHZOWpFbh-4jpDa7XWWNWSaFlQFjmr9Hw&s"
+            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870455/028403db-b2d1-493d-b0dd-d1dfb89838ca.png"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "manufacturing-quality",
+    "slug": "quy-trinh-san-xuat-tai-my",
+    "title": "Sản xuất tại Mỹ - Quy trình đạt chuẩn FDA & GMP",
+    "excerpt": "Tìm hiểu về quy trình sản xuất nghiêm ngặt tại nhà máy Hoa Kỳ, nơi tạo ra những viên uống LUTA LIFE chất lượng nhất.",
+    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867081/photo-1532187863486-abf9dbad1b69_ih2q53.avif",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Made in USA - Bảo chứng vàng cho chất lượng"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khi cầm trên tay hộp sản phẩm LUTA LIFE với dòng chữ **'Made in USA'**, quý khách hàng đang sở hữu một sản phẩm được tạo ra từ một trong những nền công nghiệp dược phẩm tiên tiến nhất thế giới. Khác với các sản phẩm gia công ở nước ngoài rồi dán nhãn, LUTA LIFE được sản xuất 100% tại nhà máy nội địa Mỹ."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867405/z7244565196819_2867db022c26075436117e872f6a08cb1_necqlp.jpg",
+        "alt": "US Factory",
+        "caption": ""
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "Cách phòng ngừa và kiểm soát"
+        "text": "Tuân thủ các tiêu chuẩn cao nhất"
       },
       {
         "type": "list",
         "style": "ordered",
         "items": [
-          "Ăn uống lành mạnh: giảm muối, tăng rau quả, hạn chế mỡ động vật.",
-          "Duy trì cân nặng hợp lý, tránh béo phì.",
-          "Tập thể dục đều đặn, ít nhất 30 phút/ngày.",
-          "Hạn chế rượu bia, bỏ thuốc lá.",
-          "Kiểm tra huyết áp định kỳ và tuân thủ điều trị theo chỉ định của bác sĩ."
+          "**FDA Registered Facility:** Nhà máy sản xuất đã được đăng ký và chịu sự giám sát định kỳ của Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA). Điều này đảm bảo mọi quy trình từ nguyên liệu đến đóng gói đều tuân thủ luật pháp Mỹ.",
+          "**cGMP Compliant:** Tuân thủ Thực hành sản xuất tốt hiện hành (Current Good Manufacturing Practice). Đảm bảo sản phẩm không bị nhiễm khuẩn, đúng hàm lượng và đồng nhất về chất lượng trong mọi lô sản xuất.",
+          "**Third-Party Tested:** Sản phẩm thường xuyên được kiểm nghiệm bởi bên thứ 3 độc lập tại Mỹ để xác nhận độ tinh khiết và an toàn."
         ]
       },
       {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/-7XZ5nDKS0M",
-        "caption": "Video hướng dẫn cách đo huyết áp tại nhà."
+        "type": "paragraph",
+        "text": "Chính vì được sản xuất theo tiêu chuẩn nội địa Mỹ, LUTA LIFE hoàn toàn không chứa các chất phụ gia độc hại, không chứa gluten (Gluten-Free) và không biến đổi gen (Non-GMO), phù hợp với xu hướng tiêu dùng xanh và sạch của người dân Mỹ hiện đại."
+      }
+    ]
+  },
+  {
+    "id": "expert-advice-us-lifestyle",
+    "slug": "loi-khuyen-cho-nguoi-song-tai-my",
+    "title": "Lời khuyên sức khỏe cho người Việt sống tại Mỹ",
+    "excerpt": "Áp lực cuộc sống Mỹ, đồ ăn nhanh và cao huyết áp. Chuyên gia gợi ý giải pháp cân bằng sức khỏe ngay tại xứ người.",
+    "cover": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Thách thức sức khỏe khi sống tại Mỹ"
       },
       {
         "type": "paragraph",
-        "text": ""
+        "text": "Cuộc sống tại Mỹ mang lại nhiều cơ hội nhưng cũng đầy rẫy áp lực. Các chuyên gia y tế nhận định, cộng đồng người Việt tại đây đối mặt với nguy cơ cao huyết áp và đột quỵ cao hơn do:"
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "**Chế độ ăn kiểu Mỹ:** Tiêu thụ nhiều thức ăn nhanh (burger, pizza, fries) chứa lượng muối (sodium) và chất béo bão hòa cực cao.",
+          "**Stress kéo dài:** Áp lực từ công việc (làm hãng, làm nail, kinh doanh...) và nhịp sống hối hả khiến hệ thần kinh luôn căng thẳng.",
+          "**Thời tiết khắc nghiệt:** Sự thay đổi nhiệt độ đột ngột ở các bang lạnh cũng ảnh hưởng xấu đến mạch máu người lớn tuổi."
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763868379/unnamed_8_nzgj72.jpg",
+        "alt": "Health Support",
+        "caption": "LUTA LIFE - Người bạn đồng hành sức khỏe."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Giải pháp từ chuyên gia"
+      },
+      {
+        "type": "paragraph",
+        "text": "Để bảo vệ sức khỏe nơi xứ người, các bác sĩ khuyên bạn:"
+      },
+      {
+        "type": "paragraph",
+        "text": "1. **Điều chỉnh dinh dưỡng:** Cố gắng nấu ăn tại nhà, giảm lượng muối trong các món kho, canh. Tăng cường rau xanh."
+      },
+      {
+        "type": "paragraph",
+        "text": "2. **Sử dụng LUTA LIFE mỗi ngày:** Đây là giải pháp tiện lợi và hiệu quả nhất cho người bận rộn. Với công thức 2-trong-1, vừa hạ áp vừa bổ não, bạn không cần uống quá nhiều loại thuốc lỉnh kỉnh. Sản phẩm nội địa Mỹ nên chất lượng luôn được đảm bảo tốt nhất."
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1600&auto=format&fit=crop",
+            "alt": "Exercise",
+            "caption": "Dành thời gian vận động."
+          },
+          {
+            "url": "taoanhdep_xoa_nen_anh_535841.jpg",
+            "alt": "Luta Life Bottle",
+            "caption": "Viên uống tiện lợi."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "customer-reviews-us",
+    "slug": "danh-gia-khach-hang-tai-my",
+    "title": "LUTA LIFE - sự tin tưởng đến từ khách hàng",
+    "excerpt": "Từ California nắng ấm đến Texas rộng lớn, lắng nghe chia sẻ của kiều bào đã tìm lại sức khỏe nhờ sản phẩm nội địa chất lượng.",
+    "cover": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Sự hài lòng từ cộng đồng người Việt"
+      },
+      {
+        "type": "paragraph",
+        "text": "Không cần quảng cáo rầm rộ, LUTA LIFE lan tỏa trong cộng đồng người Việt tại Mỹ nhờ chính chất lượng thực tế và hiệu quả mang lại."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "John Miller (60 tuổi - Houston, Texas)"
+      },
+      {
+        "type": "paragraph",
+        "text": "- One day, a close friend recommended LUTA LIFE – Blood Pressure Support to me. \n- I wasn’t sure at first, but I decided to give it a try.\n- And honestly, it was one of the best decisions I’ve made for my health.\n\n- After about three weeks, I started to notice real changes:\n+ My blood pressure became stable and balanced.\n+ The dizziness and fatigue almost disappeared.\n+ I could sleep better and feel refreshed every morning.\n+ Now, at 60, I feel healthier, more energetic, and truly at peace.\n+ “Don’t wait until it’s too late to take care of your heart. Trust me, your health is worth it.”"
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763868379/unnamed_8_nzgj72.jpg",
+        "alt": "Khách hàng vui vẻ",
+        "caption": "John Miller"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Cô Mary Hạnh (58 tuổi - San Jose, California)"
+      },
+      {
+        "type": "quote",
+        "text": "“Ở bên này đi bác sĩ gia đình (Family Doctor) thì họ chỉ cho thuốc tây thôi, uống vào người cứ mệt mệt. Từ hồi được chị bạn giới thiệu LUTA LIFE sản xuất ngay tại Mỹ, cô mua về dùng thử. Thích nhất là nó có thảo dược như Hoa Hòe, Dâm Bụt rất lành. Giờ huyết áp cô ổn định 120/80, đi làm nail cả ngày về cũng không thấy đau đầu như trước.”",
+        "by": "Cô Hạnh - California"
+      },
+      {
+        "type": "gallery",
+        "images": [
+          {
+            "url": "1 - 1.jpg",
+            "alt": "Sản phẩm trên tay",
+            "caption": "Sản phẩm được đóng gói kỹ càng."
+          },
+          {
+            "url": "2.jpg",
+            "alt": "Hộp thuốc",
+            "caption": "Thiết kế chuẩn y khoa."
+          }
+        ]
       }
     ]
   }
 ]
-
-
-
