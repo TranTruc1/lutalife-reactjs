@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function ProductCard({ product }) {
+  // ✅ SỬA: Hiển thị 2 số thập phân (ví dụ $149.00)
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-      minimumFractionDigits: 0, 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2
     }).format(amount);
   };
 
@@ -20,14 +22,11 @@ export default function ProductCard({ product }) {
       
       <Link 
         to={`/product/${product.slug}`} 
-        // ✅ SỬA: Đổi aspect-[5/4] thành aspect-[16/9] (Tỷ lệ 1920x1080)
-        // Trên mobile ảnh sẽ có khung hình chữ nhật nằm ngang chuẩn HD
         className="block relative w-full aspect-[16/9] md:aspect-auto md:h-[260px] overflow-hidden bg-[#F2F7FF]"
       >
         <img
           src={product.cover}
           alt={product.title}
-          // object-cover: Cắt ảnh để lấp đầy khung 16:9
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         
