@@ -113,7 +113,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Địa chỉ nhận hàng (Tại Mỹ)</label>
+              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Địa chỉ nhận hàng</label>
               {/* ✅ SỬA: Placeholder địa chỉ Mỹ */}
               <input required name="address" value={formData.address} onChange={handleChange} type="text" placeholder="1234 Main St, San Jose, CA 95122, USA" 
                 className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all" 
@@ -121,7 +121,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Ghi chú (Tùy chọn)</label>
+              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Ghi chú</label>
               <textarea name="note" value={formData.note} onChange={handleChange} rows="3" placeholder="Lời nhắn cho người bán..." 
                 className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none"
               ></textarea>
