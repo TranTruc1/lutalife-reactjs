@@ -120,7 +120,7 @@ export default function ProductDetail() {
                   onClick={() => setShowOrderForm(true)}
                   className="flex-1 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#65A8FB] to-[#1678F2] text-white font-bold py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all text-lg"
                 >
-                  <FaCartPlus className="size-6" /> Add to Cart
+                  <FaCartPlus className="size-6" /> Đặt hàng
                 </button>
               </div>
 
@@ -147,7 +147,7 @@ export default function ProductDetail() {
 
           <div className="mt-12 bg-white rounded-3xl p-6 md:p-10 shadow-sm">
             <h2 className="text-2xl font-bold text-[#031432] mb-6 border-l-4 border-[#1678F2] pl-4">
-              Product Details
+              Chi tiết sản phẩm
             </h2>
             <div className="prose max-w-none text-gray-700">
               {product.blocks?.map((block, index) => {
@@ -176,4 +176,5 @@ export default function ProductDetail() {
       )}
     </>
   );
+
 }
