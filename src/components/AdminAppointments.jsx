@@ -46,7 +46,7 @@ export default function Appointments() {
               <td className="border px-2 py-1">{a.phone}</td>
               <td className="border px-2 py-1">{a.date}</td>
               <td className="border px-2 py-1">{a.service}</td>
-              <td className="border px-2 py-1">{a.notes}</td>
+              <td className="border px-2 py-1">{a.note}</td>
               {role === "admin" && (
                 <td className="border px-2 py-1 text-center">
                   <button className="px-2 py-1 bg-red-500 text-white rounded mr-2">

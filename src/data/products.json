@@ -1,0 +1,91 @@
+[
+  {
+    "id": "prod-01",
+    "slug": "luta-life-combo-3-bottles",
+    "title": "LUTA LIFE - BLOOD PRESSURE SUPPORT",
+    "price": 180,
+    "originalPrice": 220,
+    "excerpt": "Tiết kiệm 18%. Ổn định huyết áp bền vững, tặng kèm cẩm nang chăm sóc tim mạch.",
+    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866288/580985362_122193845528553408_2707668903038540276_n_sp68hd.jpg",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Vì sao nên chọn LUTA LIFE – BLOOD PRESSURE SUPPORT?"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Công thức 9 thảo dược chuẩn Hoa Kỳ – hỗ trợ ổn định huyết áp an toàn, không gây lệ thuộc.",
+          "Giảm mỡ máu, làm sạch mạch máu – giúp máu lưu thông tốt hơn.",
+          "Tăng độ đàn hồi thành mạch, giảm áp lực lên tim.",
+          "Giảm chóng mặt, đau đầu, mất ngủ liên quan đến huyết áp cao.",
+          "Hỗ trợ ngăn ngừa nguy cơ tai biến – đột quỵ do huyết áp thất thường.",
+          "Sản xuất tại Mỹ, đạt chuẩn GMP – chất lượng được kiểm định nghiêm ngặt."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Liệu trình 3 tháng – Tối ưu hiệu quả"
+      },
+      {
+        "type": "paragraph",
+        "text": "Chuyên gia khuyến nghị sử dụng liên tục 90 ngày để kích hoạt cơ chế ổn định huyết áp tự nhiên của cơ thể."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tháng 1: Làm sạch mạch máu, giảm mỡ máu.",
+          "Tháng 2: Phục hồi thành mạch, tăng độ đàn hồi.",
+          "Tháng 3: Ổn định chỉ số huyết áp, ngăn ngừa tái phát."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-02",
+    "slug": "vong-huyet-ap-toma-1",
+    "title": "Vòng Huyết Áp TOMA Nhật Bản",
+    "price": 298,
+    "originalPrice": 500,
+    "excerpt": "Ổn định huyết áp nhanh – giảm chóng mặt, đau đầu, giúp ngủ ngon chỉ sau 2 tuần.",
+    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763947983/vccc_euae3e.jpg",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Công dụng nổi bật của Vòng Huyết Áp TOMA"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Ổn định huyết áp chỉ sau 1–2 tuần sử dụng.",
+          "Giảm nhanh chóng mặt, đau đầu, ù tai, hồi hộp.",
+          "Hỗ trợ ngủ sâu, ngủ ngon hơn – giảm mệt mỏi.",
+          "Cải thiện tuần hoàn máu, giúp máu lưu thông tốt.",
+          "Giảm tê bì tay chân – tăng năng lượng hằng ngày.",
+          "Hỗ trợ phòng ngừa biến chứng tim mạch và đột quỵ."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Phù hợp cho ai?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Người huyết áp cao – huyết áp thất thường – hay chóng mặt – mất ngủ – tê bì tay chân – stress – rối loạn tuần hoàn máu."
+      },
+      {
+        "type": "heading",
+        "text": "Hiệu quả theo thời gian"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tuần 1: Giảm chóng mặt, giảm đau đầu, ngủ tốt hơn.",
+          "Tuần 2–3: Huyết áp ổn định dần, tinh thần khoẻ khoắn.",
+          "Sau 1 tháng: Huyết áp ổn định, cơ thể nhẹ nhàng, ít tái phát."
+        ]
+      }
+    ]
+  }
+]
+ 

@@ -8,7 +8,7 @@ export default function VideoSection() {
   return (
     <div className="mx-auto max-w-screen-xl p-3 pb-12 md:pb-16">
       <p className="mb-3 text-center font-poppins text-[22px] font-medium text-secondary">
-        Why Dr. Matthew Anderson?
+        Tại sao chọn Dr. Matthew Anderson?
       </p>
 
       {/* Video Section */}
@@ -20,36 +20,33 @@ export default function VideoSection() {
       </div>
 
       {/* Title & description */}
-    <div className="px-4 md:px-8">
-      <h4 className="mb-3 mt-4 text-center font-poppins text-[32px] font-semibold text-[#031432]">
-        A dedicated doctor with the core mission to help
-      </h4>
-      <p className="mx-auto max-w-[843px] text-center text-para leading-relaxed">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin
-        nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis nunc
-        elementum. Tellus quam mauris aenean turpis vulputate sodales nullam
-        lobortis. Vulputate tortor tincidun.
-      </p>
-    </div>
+      <div className="px-4 md:px-8">
+        <h4 className="mb-3 mt-4 text-center font-poppins text-[32px] font-semibold text-[#031432]">
+          Đội ngũ chuyên gia y tế hàng đầu Hoa Kỳ
+        </h4>
+        <p className="mx-auto max-w-[843px] text-center text-para leading-relaxed">
+          Được dẫn dắt bởi Dr. Matthew Anderson, đội ngũ của chúng tôi quy tụ những bác sĩ và nhà nghiên cứu giàu kinh nghiệm nhất. Chúng tôi cam kết mang đến các giải pháp hỗ trợ sức khỏe tim mạch dựa trên nền tảng khoa học tiên tiến, quy trình kiểm định nghiêm ngặt và sự tận tâm tuyệt đối với sức khỏe cộng đồng.
+        </p>
+      </div>
 
-{/* Highlight items */}
-<div className="mt-[60px] w-full px-4 md:px-8">
-  <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
-    <Item title="+15 years of experience" />
-    <Item title="Urgent 24 hour service" Icon={FiCheckCircle} />
-    <Item title="High quality care" Icon={PiPlusCircleBold} />
-  </div>
-</div>
+      {/* Highlight items */}
+      <div className="mt-[60px] w-full px-4 md:px-8">
+        <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
+          <Item title="Hơn 15 năm kinh nghiệm" />
+          <Item title="Hỗ trợ chuyên môn 24/7" Icon={FiCheckCircle} />
+          <Item title="Chất lượng chuẩn Quốc tế" Icon={PiPlusCircleBold} />
+        </div>
+      </div>
 
       {/* ✅ Thông tin liên hệ + chứng nhận (có nền gradient) */}
       <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#E0F2FE] via-[#EDE9FE] to-[#FCE7F3] p-6 md:p-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <PhoneCard phone="+1 (234) 567-890" />
-          <ContactCard Icon={MdEmail} title="Email" text="info@clinic.com" />
+          <PhoneCard phone="+1 832-650-2216" />
+          <ContactCard Icon={MdEmail} title="Email" text="Lutalifeusa@gmail.com" />
           <ContactCard
             Icon={FaMapMarkerAlt}
             title="Address"
-            text="123 Main Street, New York, USA"
+            text="11462 Pagemill Rd, Dallas, TX 75243"
           />
           <CertificationCard
             title="Certification"

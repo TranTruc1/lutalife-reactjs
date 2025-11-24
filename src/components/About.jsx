@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-5 px-3 pt-28 md:flex-row md:pb-[145px] lg:gap-20 lg:px-0 lg:pt-[220px]">
+    <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-5 px-3 md:flex-row md:pb-[145px] lg:gap-20 lg:px-0">
       <div className="max-h-[495px] max-w-[586px]">
         <img
           className="custom-animate size-[85%] object-contain md:size-full"

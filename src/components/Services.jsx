@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./ui";
+import { ButtonForm } from "./ui";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Services() {
@@ -15,7 +15,7 @@ export default function Services() {
         <p className="mb-4 max-w-[485px] text-para">
           Chiết xuất thiên nhiên từ Hawthorn, Garlic và Vitamin C giúp duy trì huyết áp ổn định, tăng cường sức khỏe tim mạch.
         </p>
-        <Button title="Đặt lịch thăm khám miễn phí!" Icon={FaWhatsapp} />
+                <ButtonForm title="Đặt lịch khám miễn phí!" Icon={FaWhatsapp} />
       </div>
 
       <div className="max-h-[660px] max-w-[622px]">
