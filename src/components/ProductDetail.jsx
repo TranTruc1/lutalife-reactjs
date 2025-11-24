@@ -146,7 +146,7 @@ export default function ProductDetail() {
           </div>
 
           <div className="mt-12 bg-white rounded-3xl p-6 md:p-10 shadow-sm">
-            <h2 className="text-2xl font-bold text-[#031432] mb-6 border-l-4 border-[#1678F2] pl-4">
+            <h2 className="text-2xl font-bold text-[#031432] mb-6 border-l-4 border-[#1678F2] pl-4" style={"font-size: 20px"}>
               Chi tiết sản phẩm
             </h2>
             <div className="prose max-w-none text-gray-700">
