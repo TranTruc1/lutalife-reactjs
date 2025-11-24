@@ -35,7 +35,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
       service: "ĐẶT HÀNG ONLINE", // Đánh dấu loại dịch vụ
       date: new Date().toISOString().split('T')[0],
       // Gộp thông tin chi tiết vào ghi chú để Admin dễ xem
-      note: `Sản phẩm: ${product.title} (x${quantity})\nTổng tiền: ${formatCurrency(product.price * quantity)}\nĐịa chỉ giao hàng: ${formData.address}\nGhi chú thêm: ${formData.note}`
+      note: `Sản phẩm: ${product.title} (x${quantity}), \nTổng tiền: ${formatCurrency(product.price * quantity)},\nĐịa chỉ giao hàng: ${formData.address},\nGhi chú thêm: ${formData.note}`
     };
 
     try {
