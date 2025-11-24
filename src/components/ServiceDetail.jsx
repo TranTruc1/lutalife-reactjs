@@ -1,180 +1,186 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import products from "../data/products.json";
+import services from "../data/services.json";
 import Navbar from "./Navbar";
-import { 
-  FaCartPlus, FaMinus, FaPlus, FaPhoneAlt, 
-  FaShieldAlt, FaShippingFast 
-} from "react-icons/fa";
-import { IoCheckmarkCircle } from "react-icons/io5";
-// ✅ Import form đặt hàng mới (thay cho ButtonForm)
-import ProductOrderForm from "./ProductOrderForm";
+import VideoSection from "./VideoSection"
 
-export default function ProductDetail() {
+export default function ServiceDetail() {
   const { slug } = useParams();
-  const product = products.find((p) => p.slug === slug);
-  const [quantity, setQuantity] = useState(1);
-  const [mainImage, setMainImage] = useState("");
-  
-  // ✅ State bật/tắt form đặt hàng
-  const [showOrderForm, setShowOrderForm] = useState(false);
+  const service = services.find((s) => s.slug === slug);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (product) {
-      setMainImage(product.cover);
-    }
-  }, [slug, product]);
+    window.scrollTo(0, 0); // nhảy thẳng lên đầu
+  }, [slug]);
 
-  if (!product) {
+  if (!service) {
     return (
-      <>
-        <Navbar />
-        <div className="pt-40 text-center font-bold text-xl">Product not found</div>
-      </>
+      <div className="max-w-screen-md mx-auto p-6">
+        Không tìm thấy dịch vụ.
+      </div>
     );
   }
 
-  const formatCurrency = (amount) =>
-    new Intl.NumberFormat("en-US", { 
-      style: "currency", 
-      currency: "USD",
-      minimumFractionDigits: 2
-    }).format(amount);
-
   return (
-    <>
+    <div>
       <Navbar />
-      <div className="bg-[#F8FAFC] min-h-screen pb-20 pt-16 md:pt-24">
-        <div className="mx-auto max-w-screen-xl px-4">
-          
-          <div className="bg-white rounded-3xl shadow-sm p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
-            
-            {/* --- CỘT TRÁI: ẢNH SẢN PHẨM --- */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center justify-center bg-[#F2F7FF] rounded-2xl overflow-hidden p-6 border border-gray-100 relative group">
-                 <img 
-                   src={mainImage || product.cover} 
-                   alt={product.title} 
-                   className="w-full h-[300px] md:h-[450px] object-contain transition-transform duration-500 group-hover:scale-105"
-                 />
-              </div>
+      <div className="max-w-screen-md mx-auto px-4 py-10">
+        {/* Cover + Title */}
+        <div className="mb-10 text-center">
+          <img
+            src={service.cover}
+            alt={service.title}
+            className="w-full h-64 object-cover rounded-2xl shadow"
+          />
+          <h1 className="mt-6 text-3xl font-bold text-gray-900">
+            {service.title}
+          </h1>
+          <p className="mt-2 text-lg text-gray-600">{service.excerpt}</p>
+        </div>
 
-              {product.images && product.images.length > 0 && (
-                <div className="flex gap-3 overflow-x-auto pb-2">
-                  {product.images.map((img, index) => (
-                    <div 
+        {/* Render blocks */}
+        <div className="prose prose-lg max-w-none">
+          {service.blocks.map((block, index) => {
+            switch (block.type) {
+              case "heading":
+                if (block.level === 2) {
+                  return (
+                    <h2
                       key={index}
-                      onClick={() => setMainImage(img)}
-                      className={`
-                        cursor-pointer flex-shrink-0 w-20 h-20 bg-white rounded-xl border-2 p-1
-                        ${mainImage === img ? "border-[#1678F2]" : "border-gray-100 hover:border-gray-300"}
-                      `}
+                      className="mt-10 mb-4 text-2xl font-semibold text-gray-800"
                     >
-                      <img 
-                        src={img} 
-                        alt={`thumb-${index}`} 
-                        className="w-full h-full object-contain rounded-lg"
+                      {block.text}
+                    </h2>
+                  );
+                }
+                if (block.level === 3) {
+                  return (
+                    <h3
+                      key={index}
+                      className="mt-8 mb-3 text-xl font-medium text-gray-700"
+                    >
+                      {block.text}
+                    </h3>
+                  );
+                }
+                return (
+                  <h4 key={index} className="mt-6 mb-2 text-lg">
+                    {block.text}
+                  </h4>
+                );
+
+              case "paragraph":
+                return (
+                  <p
+                    key={index}
+                    className="mb-4 text-gray-700 leading-relaxed"
+                  >
+                    {block.text}
+                  </p>
+                );
+
+              case "image":
+                return (
+                  <figure key={index} className="my-6">
+                    <img
+                      src={block.url}
+                      alt={block.alt}
+                      className="w-full rounded-xl shadow"
+                    />
+                    {block.caption && (
+                      <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+
+              case "list":
+                return block.style === "unordered" ? (
+                  <ul
+                    key={index}
+                    className="list-disc pl-6 space-y-1 text-gray-700"
+                  >
+                    {block.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <ol
+                    key={index}
+                    className="list-decimal pl-6 space-y-1 text-gray-700"
+                  >
+                    {block.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ol>
+                );
+
+              case "quote":
+                return (
+                  <blockquote
+                    key={index}
+                    className="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-6"
+                  >
+                    {block.text}
+                    {block.by && (
+                      <footer className="mt-1 text-sm text-gray-500">
+                        — {block.by}
+                      </footer>
+                    )}
+                  </blockquote>
+                );
+
+              case "gallery":
+                return (
+                  <div
+                    key={index}
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8"
+                  >
+                    {block.images.map((img, i) => (
+                      <figure key={i} className="flex flex-col items-center">
+                        <img
+                          src={img.url}
+                          alt={img.alt}
+                          className="w-full h-40 object-cover rounded-xl shadow"
+                        />
+                        {img.caption && (
+                          <figcaption className="mt-1 text-sm text-gray-500 text-center">
+                            {img.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    ))}
+                  </div>
+                );
+
+              case "video": // ✅ thêm case video
+                return (
+                  <figure key={index} className="my-6">
+                    <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow">
+                      <iframe
+                        src={block.url}
+                        title={block.caption || "Video"}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute top-0 left-0 w-full h-full rounded-xl"
                       />
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* --- CỘT PHẢI: THÔNG TIN --- */}
-            <div className="flex flex-col">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#031432] font-poppins mb-2 leading-tight">
-                {product.title}
-              </h1>
-              
-              <div className="flex items-end gap-4 my-6 border-b border-gray-100 pb-6">
-                <span className="text-4xl font-bold text-[#1678F2]">
-                  {formatCurrency(product.price)}
-                </span>
-                {product.originalPrice > 0 && (
-                  <span className="text-xl text-gray-400 line-through mb-1">
-                    {formatCurrency(product.originalPrice)}
-                  </span>
-                )}
-              </div>
-
-              <p className="text-gray-600 mb-8 text-lg">{product.excerpt}</p>
-
-              <div className="flex items-center gap-4 mb-8">
-                <span className="font-medium text-[#031432]">Quantity:</span>
-                <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 gap-4 bg-white">
-                  <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="text-gray-500 hover:text-[#1678F2]">
-                    <FaMinus size={12} />
-                  </button>
-                  <span className="font-bold w-6 text-center">{quantity}</span>
-                  <button onClick={() => setQuantity(q => q + 1)} className="text-gray-500 hover:text-[#1678F2]">
-                    <FaPlus size={12} />
-                  </button>
-                </div>
-              </div>
-
-              {/* ✅ SỬA: Nút bấm mở Form Đặt Hàng (ProductOrderForm) */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button 
-                  onClick={() => setShowOrderForm(true)}
-                  className="flex-1 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#65A8FB] to-[#1678F2] text-white font-bold py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all text-lg"
-                >
-                  <FaCartPlus className="size-6" /> Đặt hàng
-                </button>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 bg-gray-50 p-5 rounded-xl border border-gray-100">
-                 <div className="flex items-center gap-3">
-                    <FaShieldAlt className="text-green-500 text-xl" />
-                    <span className="text-sm font-medium text-gray-700">100% Genuine</span>
-                 </div>
-                 <div className="flex items-center gap-3">
-                    <FaShippingFast className="text-blue-500 text-xl" />
-                    <span className="text-sm font-medium text-gray-700">Free US Shipping</span>
-                 </div>
-                 <div className="flex items-center gap-3">
-                    <IoCheckmarkCircle className="text-orange-500 text-xl" />
-                    <span className="text-sm font-medium text-gray-700">Check upon delivery</span>
-                 </div>
-                 <div className="flex items-center gap-3">
-                    <FaPhoneAlt className="text-red-500 text-xl" />
-                    <span className="text-sm font-medium text-gray-700">24/7 Support</span>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-white rounded-3xl p-6 md:p-10 shadow-sm">
-            <h2 className="text-2xl font-bold text-[#031432] mb-6 border-l-4 border-[#1678F2] pl-4">
-              Chi tiết sản phẩm
-            </h2>
-            <div className="prose max-w-none text-gray-700">
-              {product.blocks?.map((block, index) => {
-                if (block.type === "heading") return <h3 key={index} className="text-xl font-bold mt-6 mb-2">{block.text}</h3>;
-                if (block.type === "paragraph") return <p key={index} className="mb-4 leading-relaxed">{block.text}</p>;
-                if (block.type === "list") return (
-                  <ul key={index} className="list-disc pl-6 mb-4 space-y-2">
-                    {block.items.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
+                    {block.caption && (
+                      <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
                 );
-                return null;
-              })}
-            </div>
-          </div>
 
+              default:
+                return null;
+            }
+          })}
         </div>
       </div>
-
-      {/* ✅ Render Popup ProductOrderForm khi showOrderForm = true */}
-      {showOrderForm && (
-        <ProductOrderForm 
-          product={product} 
-          quantity={quantity} 
-          onClose={() => setShowOrderForm(false)} 
-        />
-      )}
-    </>
+      <VideoSection />
+    </div>
   );
-
 }
