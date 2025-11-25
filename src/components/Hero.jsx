@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="max-h-[506px] max-w-[678px]">
           <img
             className="custom-animate size-full object-contain"
-            src="/hero.png"
+            src="https://res.cloudinary.com/dgxtwb88k/image/upload/v1764035428/g446_xcpr91.png"
             alt="Hero"
           />
         </div>
