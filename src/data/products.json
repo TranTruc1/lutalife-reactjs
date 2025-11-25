@@ -6,14 +6,20 @@
     "price": 180,
     "originalPrice": 280,
     "excerpt": "Tiết kiệm 36%. Hỗ trợ điều trị bệnh huyết áp tận gốc, làm sạch mỡ máu giúp lưu thông máu.",
-    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866288/580985362_122193845528553408_2707668903038540276_n_sp68hd.jpg",
+    "cover": "/vien-uong-luta-life.jpg",
+    "coverAlt": "Hộp viên uống LUTA LIFE - Blood Pressure Support hỗ trợ huyết áp Made in USA",
+    "images": [
+      "/vien-uong-luta-life.jpg"
+    ],
     "blocks": [
       {
         "type": "heading",
+        "level": 2,
         "text": "Vì sao nên chọn LUTA LIFE – BLOOD PRESSURE SUPPORT?"
       },
       {
         "type": "list",
+        "style": "unordered",
         "items": [
           "Công thức 9 thảo dược chuẩn Hoa Kỳ – hỗ trợ ổn định huyết áp an toàn, không gây lệ thuộc.",
           "Giảm mỡ máu, làm sạch mạch máu – giúp máu lưu thông tốt hơn.",
@@ -25,6 +31,7 @@
       },
       {
         "type": "heading",
+        "level": 2,
         "text": "Liệu trình 3 tháng – Tối ưu hiệu quả"
       },
       {
@@ -33,6 +40,7 @@
       },
       {
         "type": "list",
+        "style": "unordered",
         "items": [
           "Tháng 1: Làm sạch mạch máu, giảm mỡ máu.",
           "Tháng 2: Phục hồi thành mạch, tăng độ đàn hồi.",
@@ -48,14 +56,20 @@
     "price": 298,
     "originalPrice": 500,
     "excerpt": "Ổn định huyết áp nhanh – giảm chóng mặt, đau đầu, giúp ngủ ngon chỉ sau 2 tuần.",
-    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763974542/DSC01560111_k9wwos.jpg",
+    "cover": "/luta-life-vong-huyet-ap-toma-nhat-ban.jpg",
+    "coverAlt": "Vòng đeo cổ ổn định huyết áp TOMA Nhật Bản chính hãng",
+    "images": [
+      "/luta-life-vong-huyet-ap-toma-nhat-ban.jpg"
+    ],
     "blocks": [
       {
         "type": "heading",
+        "level": 2,
         "text": "Công dụng nổi bật của Vòng Huyết Áp TOMA"
       },
       {
         "type": "list",
+        "style": "unordered",
         "items": [
           "Ổn định huyết áp chỉ sau 1–2 tuần sử dụng.",
           "Giảm nhanh chóng mặt, đau đầu, ù tai, hồi hộp.",
@@ -67,6 +81,7 @@
       },
       {
         "type": "heading",
+        "level": 2,
         "text": "Phù hợp cho ai?"
       },
       {
@@ -75,10 +90,12 @@
       },
       {
         "type": "heading",
+        "level": 2,
         "text": "Hiệu quả theo thời gian"
       },
       {
         "type": "list",
+        "style": "unordered",
         "items": [
           "Tuần 1: Giảm chóng mặt, giảm đau đầu, ngủ tốt hơn.",
           "Tuần 2–3: Huyết áp ổn định dần, tinh thần khoẻ khoắn.",
@@ -88,4 +105,3 @@
     ]
   }
 ]
- 

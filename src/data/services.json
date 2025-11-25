@@ -4,7 +4,8 @@
     "slug": "gioi-thieu-luta-life-noi-dia-my",
     "title": "LUTA LIFE - BLOOD PRESSURE SUPPORT",
     "excerpt": "Sản phẩm hỗ trợ huyết áp 'Made in USA' chính hiệu, được nghiên cứu và sản xuất ngay tại Hoa Kỳ, dành riêng cho người Mỹ và cộng đồng Việt Kiều.",
-    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866288/580985362_122193845528553408_2707668903038540276_n_sp68hd.jpg",
+    "cover": "/vien-uong-luta-life.jpg",
+    "coverAlt": "Hộp viên uống Luta Life Blood Pressure Support chính hãng Made in USA",
     "blocks": [
       {
         "type": "heading",
@@ -18,7 +19,7 @@
       {
         "type": "image",
         "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763866879/536264386_122181048038553408_1729114713008213031_n_1_jmgine.png",
-        "alt": "Sản phẩm Luta Life nội địa Mỹ",
+        "alt": "Sản phẩm Luta Life nội địa Mỹ hỗ trợ huyết áp",
         "caption": "Sản phẩm chính gốc Hoa Kỳ - Phục vụ cộng đồng người Việt tại Mỹ."
       },
       {
@@ -56,6 +57,7 @@
     "title": "Cao Huyết Áp - Biến chứng dẫn đến tử vong",
     "excerpt": "Đừng để sự chủ quan giết chết bạn! Phân tích chi tiết quá trình tàn phá cơ thể của Cao huyết áp: Từ vỡ mạch máu não, trụy tim đến suy thận mạn tính.",
     "cover": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
+    "coverAlt": "Bác sĩ đo huyết áp cho bệnh nhân cao tuổi",
     "blocks": [
       {
         "type": "heading",
@@ -77,8 +79,8 @@
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Stroke diagram",
+        "url": "tac-nghen-mach-mau-nao.jpg",
+        "alt": "Mô phỏng mạch máu não bị tắc nghẽn gây đột quỵ (Stroke)",
         "caption": "Mô phỏng mạch máu não bị tắc nghẽn gây đột quỵ."
       },
       {
@@ -100,8 +102,8 @@
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Heart Anatomy",
+        "url": "trai-tim-ton-thuong.webp",
+        "alt": "Trái tim bị tổn thương do áp lực máu quá cao kéo dài.",
         "caption": "Trái tim bị tổn thương do áp lực máu quá cao kéo dài."
       },
       {
@@ -119,8 +121,8 @@
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Artery Plaque",
+        "url": "xo-vua-dong-mach.jpg",
+        "alt": "Mảng xơ vữa làm hẹp lòng mạch, cản trở lưu thông máu.",
         "caption": "Mảng xơ vữa làm hẹp lòng mạch, cản trở lưu thông máu."
       },
       {
@@ -152,9 +154,9 @@
       },
       {
         "type": "image",
-        "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Doctor checking patient",
-        "caption": "Kiểm tra sức khỏe định kỳ để phát hiện biến chứng sớm."
+        "url": "suy-than.webp",
+        "alt": "Suy thận gây tổn thương mắt",
+        "caption": "Suy thận gây tổn thương mắt"
       },
       {
         "type": "heading",
@@ -186,7 +188,8 @@
     "slug": "thanh-phan-chuan-my",
     "title": "Bảng thành phần 'Chuẩn Mỹ' - Tinh khiết và An toàn",
     "excerpt": "Khám phá công thức độc quyền kết hợp Citicoline và Thảo dược, sử dụng nguồn nguyên liệu cao cấp nhất được tuyển chọn tại Hoa Kỳ.",
-    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867900/Lovepik_com-602846924-hexagonal-geometric-pattern-on-light-blue-background_qzoaog.jpg",
+    "cover": "thanh-phan.jpg",
+    "coverAlt": "Bảng thành phần chuẩn Mỹ",
     "blocks": [
       {
         "type": "heading",
@@ -204,9 +207,9 @@
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870330/5fdbd4e8-0d98-4500-8f46-f2aa82a42132.png",
-        "alt": "Ingredient Facts",
-        "caption": "Bảng thành phần (Supplement Facts) minh bạch."
+        "url": "thanh-phan-huyet-ap-luta-life-blood-pressure-support.png",
+        "alt": "Bảng thành phần chi tiết của LUTA LIFE - BLOOD PRESSURE SUPPORT",
+        "caption": "Bảng thành phần chi tiết của LUTA LIFE - BLOOD PRESSURE SUPPORT"
       },
       {
         "type": "paragraph",
@@ -247,10 +250,14 @@
         "type": "gallery",
         "images": [
           {
-            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870423/f6498d2e-7dbb-4dac-ab0b-28dd1c7aa729.png"
+            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870423/f6498d2e-7dbb-4dac-ab0b-28dd1c7aa729.png",
+            "alt": "Viên uống Luta Life chiết xuất thảo dược tự nhiên",
+            "caption": "Thành phần 100% tự nhiên"
           },
           {
-            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870455/028403db-b2d1-493d-b0dd-d1dfb89838ca.png"
+            "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763870455/028403db-b2d1-493d-b0dd-d1dfb89838ca.png",
+            "alt": "Chứng nhận an toàn và chất lượng Mỹ",
+            "caption": "An toàn tuyệt đối"
           }
         ]
       }
@@ -261,7 +268,8 @@
     "slug": "quy-trinh-san-xuat-tai-my",
     "title": "Sản xuất tại Mỹ - Quy trình đạt chuẩn FDA & GMP",
     "excerpt": "Tìm hiểu về quy trình sản xuất nghiêm ngặt tại nhà máy Hoa Kỳ, nơi tạo ra những viên uống LUTA LIFE chất lượng nhất.",
-    "cover": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867081/photo-1532187863486-abf9dbad1b69_ih2q53.avif",
+    "cover": "anh-bia-quy-trinh.avif",
+    "coverAlt": "Sản xuất tại Mỹ - Quy trình đạt chuẩn FDA & GMP",
     "blocks": [
       {
         "type": "heading",
@@ -275,7 +283,7 @@
       {
         "type": "image",
         "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867402/z7244565196819_2867db022c26075436117e872f6a08cb1_gxkwsa.jpg",
-        "alt": "US Factory",
+        "alt": "Quy trình sản xuất thuốc tại nhà máy US đạt chuẩn FDA",
         "caption": ""
       },
       {
@@ -303,7 +311,8 @@
     "slug": "loi-khuyen-cho-nguoi-song-tai-my",
     "title": "Lời khuyên sức khỏe cho người Việt sống tại Mỹ",
     "excerpt": "Áp lực cuộc sống Mỹ, đồ ăn nhanh và cao huyết áp. Chuyên gia gợi ý giải pháp cân bằng sức khỏe ngay tại xứ người.",
-    "cover": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1600&auto=format&fit=crop",
+    "cover": "loi-khuyen.avif",
+    "coverAlt": "Lời khuyên sức khỏe cho người Việt sống tại Mỹ",
     "blocks": [
       {
         "type": "heading",
@@ -325,8 +334,8 @@
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763868379/unnamed_8_nzgj72.jpg",
-        "alt": "Health Support",
+        "url": "luta-life-nguoi-ban-dong-hanh.jpg",
+        "alt": "Sản phẩm LUTA LIFE - Blood Pressure Support",
         "caption": "LUTA LIFE - Người bạn đồng hành sức khỏe."
       },
       {
@@ -350,10 +359,14 @@
         "type": "gallery",
         "images": [
           {
-            "url": "https://duonglaobinhmy.com/wp-content/uploads/2024/03/the-duc-dem-den-niem-vui-cho-nguoi-cao-tuoi-1024x576.jpg"
+            "url": "https://duonglaobinhmy.com/wp-content/uploads/2024/03/the-duc-dem-den-niem-vui-cho-nguoi-cao-tuoi-1024x576.jpg",
+            "alt": "Người cao tuổi tập thể dục dưỡng sinh",
+            "caption": "Vận động nhẹ nhàng mỗi ngày"
           },
           {
-            "url": "https://cafefcdn.com/203337114487263232/2023/12/26/image001-2534-1692788403-17035820962141820105067.jpg"
+            "url": "https://cafefcdn.com/203337114487263232/2023/12/26/image001-2534-1692788403-17035820962141820105067.jpg",
+            "alt": "Gia đình người Việt hạnh phúc sum vầy",
+            "caption": "Gia đình sum vầy, sức khỏe dồi dào"
           }
         ]
       }
@@ -364,7 +377,8 @@
     "slug": "danh-gia-khach-hang-tai-my",
     "title": "LUTA LIFE - sự tin tưởng đến từ khách hàng",
     "excerpt": "Từ California nắng ấm đến Texas rộng lớn, lắng nghe chia sẻ của kiều bào đã tìm lại sức khỏe nhờ sản phẩm nội địa chất lượng.",
-    "cover": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop",
+    "cover": "luta-life-nguoi-ban-dong-hanh.jpg",
+    "coverAlt": "Khách hàng mua sắm vui vẻ",
     "blocks": [
       {
         "type": "heading",
@@ -386,8 +400,8 @@
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763868379/unnamed_8_nzgj72.jpg",
-        "alt": "Khách hàng vui vẻ",
+        "url": "luta-life-nguoi-ban-dong-hanh.jpg",
+        "alt": "Khách hàng nam 60 tuổi hài lòng với sản phẩm LUTA LIFE - Blood Pressure Support",
         "caption": "John Miller"
       },
       {
