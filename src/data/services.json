@@ -3,7 +3,7 @@
     "id": "intro-luta-life-us-market",
     "slug": "gioi-thieu-luta-life-noi-dia-my",
     "title": "LUTA LIFE - BLOOD PRESSURE SUPPORT",
-    "excerpt": "Sản phẩm hỗ trợ huyết áp 'Made in USA' chính hiệu, được nghiên cứu và sản xuất ngay tại Hoa Kỳ, dành riêng cho người Mỹ và cộng đồng Việt Kiều.",
+    "excerpt": "Sản phẩm hỗ trợ huyết áp 'Made in USA' chính hiệu. Sự kết hợp giữa công nghệ dược phẩm Hoa Kỳ và tinh hoa thảo dược, cam kết chất lượng FDA.",
     "cover": "/vien-uong-luta-life.jpg",
     "coverAlt": "Hộp viên uống Luta Life Blood Pressure Support chính hãng Made in USA",
     "blocks": [
@@ -24,7 +24,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Sản phẩm được phát triển để giải quyết các vấn đề sức khỏe tim mạch đặc thù của người sinh sống tại Mỹ: áp lực công việc cao, chế độ ăn nhiều thức ăn nhanh (fast food), đồ muối mặn và lối sống ít vận động. LUTA LIFE là sự kết hợp hoàn hảo giữa công nghệ bào chế tân tiến của Mỹ và tinh hoa thảo dược phương Đông, mang lại sự an tâm tuyệt đối cho người sử dụng."
+        "text": "Sản phẩm được phát triển để giải quyết các vấn đề sức khỏe tim mạch đặc thù của người sinh sống tại Mỹ: áp lực công việc cao, chế độ ăn nhiều thức ăn nhanh (fast food), đồ muối mặn và lối sống ít vận động. LUTA LIFE là sự kết hợp hoàn hảo giữa công nghệ bào chế tân tiến của Mỹ và tinh hoa thảo dược phương Đông."
       },
       {
         "type": "heading",
@@ -32,22 +32,41 @@
         "text": "Lựa chọn hàng đầu cho cộng đồng Việt tại Mỹ"
       },
       {
-        "type": "paragraph",
-        "text": "Đối với cô bác, anh chị người Việt đang sinh sống, làm việc tại 50 tiểu bang, việc tìm kiếm một sản phẩm vừa có tiếng Anh chuẩn y khoa, vừa có hướng dẫn tiếng Việt, lại phù hợp với cơ địa người Á Đông là điều không dễ dàng. LUTA LIFE chính là câu trả lời hoàn hảo:"
-      },
-      {
         "type": "list",
         "style": "unordered",
         "items": [
           "**Sản xuất tại Mỹ, nguồn gốc rõ ràng:** Sản xuất và phân phối trực tiếp tại Mỹ, không qua trung gian, đảm bảo chất lượng tươi mới nhất.",
           "**Tiêu chuẩn kép:** Vừa đáp ứng quy định FDA Hoa Kỳ, vừa phù hợp với thể trạng người Việt.",
-          "**Uy tín và chất lượng:** Giao hàng nhanh chóng (Shipping) đến tận nhà trên khắp các bang từ California, Texas đến Florida... Được cam kết về độ hiệu quả và sự an toàn."
+          "**Uy tín và chất lượng:** Giao hàng nhanh chóng (Shipping) đến tận nhà trên khắp các bang từ California, Texas đến Florida..."
         ]
       },
       {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/example_us_factory",
-        "caption": "Tham quan quy trình sản xuất tại nhà máy ở Mỹ."
+        "type": "heading",
+        "level": 2,
+        "text": "Quy trình sản xuất đạt chuẩn FDA & GMP"
+      },
+      {
+        "type": "paragraph",
+        "text": "Khi cầm trên tay hộp sản phẩm LUTA LIFE với dòng chữ **'Made in USA'**, quý khách hàng đang sở hữu một sản phẩm được tạo ra từ một trong những nền công nghiệp dược phẩm tiên tiến nhất thế giới."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867402/z7244565196819_2867db022c26075436117e872f6a08cb1_gxkwsa.jpg",
+        "alt": "Quy trình sản xuất thuốc tại nhà máy US đạt chuẩn FDA",
+        "caption": "Nhà máy sản xuất hiện đại, khép kín tại Hoa Kỳ."
+      },
+      {
+        "type": "list",
+        "style": "ordered",
+        "items": [
+          "**FDA Registered Facility:** Nhà máy sản xuất đã được đăng ký và chịu sự giám sát định kỳ của Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA).",
+          "**cGMP Compliant:** Tuân thủ Thực hành sản xuất tốt hiện hành (Current Good Manufacturing Practice). Đảm bảo sản phẩm không bị nhiễm khuẩn, đúng hàm lượng.",
+          "**Third-Party Tested:** Sản phẩm thường xuyên được kiểm nghiệm bởi bên thứ 3 độc lập tại Mỹ để xác nhận độ tinh khiết và an toàn."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Chính vì được sản xuất theo tiêu chuẩn nội địa Mỹ, LUTA LIFE hoàn toàn không chứa các chất phụ gia độc hại, không chứa gluten (Gluten-Free) và không biến đổi gen (Non-GMO)."
       }
     ]
   },
@@ -66,7 +85,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Cao huyết áp không đơn thuần là những con số đo được trên máy. Đó là một áp lực vật lý khủng khiếp liên tục đè nặng lên hệ thống mạch máu 24/7. Tại Mỹ, cứ 3 người trưởng thành thì có 1 người bị cao huyết áp. Điều đáng sợ nhất là bệnh diễn tiến âm thầm, không có triệu chứng rõ rệt cho đến khi cơ thể 'sụp đổ' bởi những biến chứng kinh hoàng sau đây:"
+        "text": "Cao huyết áp không đơn thuần là những con số đo được trên máy. Đó là một áp lực vật lý khủng khiếp liên tục đè nặng lên hệ thống mạch máu 24/7. Tại Mỹ, cứ 3 người trưởng thành thì có 1 người bị cao huyết áp."
       },
       {
         "type": "heading",
@@ -75,7 +94,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Cao huyết áp là thủ phạm của 80% các ca đột quỵ. Áp lực máu quá lớn làm thành mạch máu não bị yếu đi, phình ra và có thể vỡ bất cứ lúc nào (Xuất huyết não). Đồng thời, nó thúc đẩy quá trình xơ vữa, tạo cục máu đông làm tắc nghẽn dòng chảy (Nhồi máu não)."
+        "text": "Cao huyết áp là thủ phạm của 80% các ca đột quỵ. Áp lực máu quá lớn làm thành mạch máu não bị yếu đi, phình ra và có thể vỡ bất cứ lúc nào (Xuất huyết não)."
       },
       {
         "type": "image",
@@ -84,21 +103,13 @@
         "caption": "Mô phỏng mạch máu não bị tắc nghẽn gây đột quỵ."
       },
       {
-        "type": "list",
-        "style": "unordered",
-        "items": [
-          "**Dấu hiệu báo trước:** Tê yếu tay chân một bên, méo miệng, nói ngọng, đau đầu dữ dội không rõ nguyên nhân.",
-          "**Hậu quả:** Tử vong nhanh chóng hoặc để lại di chứng nặng nề như liệt nửa người, sống thực vật, trở thành gánh nặng cho gia đình."
-        ]
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "2. Suy tim & Nhồi máu cơ tim (Heart Failure)"
       },
       {
         "type": "paragraph",
-        "text": "Hãy tưởng tượng trái tim bạn như một chiếc máy bơm. Khi huyết áp cao, chiếc máy bơm này phải gồng mình hoạt động hết công suất để thắng được sức cản trong lòng mạch. Theo thời gian, cơ tim bị dày lên (dày thất trái), tim to ra và dần dần suy yếu, mất khả năng bơm máu."
+        "text": "Hãy tưởng tượng trái tim bạn như một chiếc máy bơm. Khi huyết áp cao, chiếc máy bơm này phải gồng mình hoạt động hết công suất để thắng được sức cản trong lòng mạch."
       },
       {
         "type": "image",
@@ -107,17 +118,9 @@
         "caption": "Trái tim bị tổn thương do áp lực máu quá cao kéo dài."
       },
       {
-        "type": "paragraph",
-        "text": "Đặc biệt, người Việt tại Mỹ tiêu thụ nhiều đồ ăn nhanh chứa chất béo bão hòa, dẫn đến **Xơ vữa động mạch vành**. Khi mảng xơ vữa nứt vỡ, nó chặn đứng đường nuôi tim, gây ra cơn **Nhồi máu cơ tim** cấp tính, cướp đi sinh mạng chỉ trong vài phút."
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "3. Mỡ máu cao & Xơ vữa động mạch"
-      },
-      {
-        "type": "paragraph",
-        "text": "Cao huyết áp và Mỡ máu (Cholesterol) là 'đôi bạn cùng tiến' hủy hoại cơ thể. Huyết áp cao làm tổn thương lớp lót trong thành mạch, tạo điều kiện cho Cholesterol xấu (LDL) xâm nhập và tích tụ, hình thành các mảng xơ vữa cứng."
       },
       {
         "type": "image",
@@ -128,29 +131,7 @@
       {
         "type": "heading",
         "level": 3,
-        "text": "4. Rối loạn tiền đình & Thiếu máu não mãn tính"
-      },
-      {
-        "type": "paragraph",
-        "text": "Đây là tình trạng phổ biến nhưng hay bị bỏ qua. Khi mạch máu bị hẹp, lượng máu và oxy lên não không đủ, gây ra:"
-      },
-      {
-        "type": "list",
-        "style": "unordered",
-        "items": [
-          "Chóng mặt, hoa mắt, tối sầm mặt mũi khi thay đổi tư thế.",
-          "Ù tai, mất thăng bằng, cảm giác nhà cửa đảo lộn.",
-          "Mất ngủ, suy giảm trí nhớ trầm trọng và hội chứng 'sương mù não' (Brain fog)."
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "5. Suy thận & Tổn thương đáy mắt"
-      },
-      {
-        "type": "paragraph",
-        "text": "Ít ai biết rằng thận là cơ quan chịu ảnh hưởng nặng nề thứ hai sau tim. Hệ thống mạch máu nhỏ trong thận bị áp lực phá hủy, làm mất khả năng lọc chất độc, dẫn đến **Suy thận mạn tính** phải chạy thận nhân tạo. Ngoài ra, cao huyết áp còn gây xuất huyết võng mạc, dẫn đến mờ mắt hoặc mù lòa."
+        "text": "4. Suy thận & Tổn thương đáy mắt"
       },
       {
         "type": "image",
@@ -164,22 +145,14 @@
         "text": "LUTA LIFE - Chặn đứng nguy cơ từ gốc"
       },
       {
-        "type": "paragraph",
-        "text": "Hiểu rõ cơ chế bệnh sinh phức tạp này, **LUTA LIFE** mang đến giải pháp tác động đa chiều:"
-      },
-      {
         "type": "list",
         "style": "ordered",
         "items": [
           "**Làm sạch lòng mạch:** Giảm Cholesterol, ngăn ngừa hình thành mảng xơ vữa.",
-          "**Bền thành mạch:** Dưỡng chất từ Hoa Hòe và Rutin giúp mạch máu dẻo dai, chịu được áp lực, chống nứt vỡ.",
+          "**Bền thành mạch:** Dưỡng chất từ Hoa Hòe và Rutin giúp mạch máu dẻo dai, chịu được áp lực.",
           "**Bơm máu lên não:** Citicoline và Bạch quả thúc đẩy tuần hoàn, xóa tan các triệu chứng tiền đình.",
           "**Ổn định huyết áp:** Giữ chỉ số ở mức an toàn, giảm tải áp lực cho Tim và Thận."
         ]
-      },
-      {
-        "type": "paragraph",
-        "text": "*Sức khỏe là vàng. Đừng đợi đến khi đột quỵ gõ cửa mới tìm cách chữa trị!*"
       }
     ]
   },
@@ -198,7 +171,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Điều làm nên sự khác biệt của LUTA LIFE so với các sản phẩm trôi nổi khác chính là nguồn nguyên liệu. Tại Mỹ, các quy định về độ tinh khiết của dược liệu là cực kỳ nghiêm ngặt. Mỗi thành phần trong LUTA LIFE đều phải trải qua quá trình sàng lọc, kiểm tra dư lượng kim loại nặng và vi sinh vật trước khi đưa vào sản xuất."
+        "text": "Mỗi thành phần trong LUTA LIFE đều phải trải qua quá trình sàng lọc, kiểm tra dư lượng kim loại nặng và vi sinh vật trước khi đưa vào sản xuất."
       },
       {
         "type": "heading",
@@ -213,11 +186,11 @@
       },
       {
         "type": "paragraph",
-        "text": "**Citicoline (300mg):** Đây là hàm lượng chuẩn được các nhà khoa học Mỹ khuyến nghị để phục hồi chức năng não bộ. Citicoline giúp tăng cường sự minh mẫn, giảm thiểu tình trạng 'sương mù não' (brain fog) và đau đầu do thiếu máu não - tình trạng rất phổ biến ở người làm việc căng thẳng tại Mỹ."
+        "text": "**Citicoline (300mg):** Đây là hàm lượng chuẩn được các nhà khoa học Mỹ khuyến nghị để phục hồi chức năng não bộ. Citicoline giúp tăng cường sự minh mẫn, giảm thiểu tình trạng 'sương mù não' (brain fog)."
       },
       {
         "type": "paragraph",
-        "text": "**Ginkgo Biloba (100mg):** Chiết xuất Bạch quả tiêu chuẩn hóa, giúp khơi thông dòng chảy của máu lên não, giảm chóng mặt và cải thiện trí nhớ cho người cao tuổi."
+        "text": "**Ginkgo Biloba (100mg):** Chiết xuất Bạch quả tiêu chuẩn hóa, giúp khơi thông dòng chảy của máu lên não, giảm chóng mặt và cải thiện trí nhớ."
       },
       {
         "type": "heading",
@@ -225,26 +198,13 @@
         "text": "2. Hợp chất thảo dược hạ áp (Blood Pressure Support)"
       },
       {
-        "type": "paragraph",
-        "text": "Sự kết hợp giữa tri thức Đông Y và công nghệ chiết xuất Tây Y tạo nên hiệu quả vượt trội:"
-      },
-      {
         "type": "list",
         "style": "unordered",
         "items": [
           "**Japanese Pagoda Tree (Hoa Hòe - 150mg):** Cung cấp Rutin tự nhiên giúp làm bền thành mạch, ngăn ngừa vỡ mạch máu não.",
-          "**Hibiscus Flower (Hoa Dâm Bụt - 150mg):** Thảo dược được Hiệp hội Tim mạch Hoa Kỳ (AHA) công nhận về khả năng hỗ trợ kiểm soát huyết áp tâm thu và tâm trương hiệu quả.",
+          "**Hibiscus Flower (Hoa Dâm Bụt - 150mg):** Thảo dược được Hiệp hội Tim mạch Hoa Kỳ (AHA) công nhận về khả năng hỗ trợ kiểm soát huyết áp hiệu quả.",
           "**Rutin (50mg):** Tăng cường sức chịu đựng của mao mạch."
         ]
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "3. Vi chất thiết yếu (Essential Nutrients)"
-      },
-      {
-        "type": "paragraph",
-        "text": "Bổ sung **Magnesium, Potassium (Kali), Vitamin D3, B9, B12** giúp cân bằng điện giải, bảo vệ nhịp tim và ngăn ngừa nguy cơ đột quỵ do thiếu hụt dinh dưỡng."
       },
       {
         "type": "gallery",
@@ -264,45 +224,66 @@
     ]
   },
   {
-    "id": "manufacturing-quality",
-    "slug": "quy-trinh-san-xuat-tai-my",
-    "title": "Sản xuất tại Mỹ - Quy trình đạt chuẩn FDA & GMP",
-    "excerpt": "Tìm hiểu về quy trình sản xuất nghiêm ngặt tại nhà máy Hoa Kỳ, nơi tạo ra những viên uống LUTA LIFE chất lượng nhất.",
-    "cover": "anh-bia-quy-trinh.avif",
-    "coverAlt": "Sản xuất tại Mỹ - Quy trình đạt chuẩn FDA & GMP",
+    "id": "cold-weather-stroke-risk",
+    "slug": "thoi-tiet-tro-lanh-dot-quy-gia-tang",
+    "title": "Thời tiết trở lạnh, những ca đột quỵ gia tăng",
+    "excerpt": "Cảnh báo khẩn cấp: Nhiệt độ giảm sâu làm mạch máu co lại đột ngột, khiến huyết áp tăng vọt. Đây là thời điểm 'tử thần' đối với người có tiền sử tim mạch.",
+    "cover": "thoi-tiet-tro-lanh.jpg",
+    "coverAlt": "Thời tiết trở lạnh",
     "blocks": [
       {
         "type": "heading",
         "level": 2,
-        "text": "Made in USA - Bảo chứng vàng cho chất lượng"
+        "text": "Tại sao mùa lạnh là mùa của Đột quỵ?"
       },
       {
         "type": "paragraph",
-        "text": "Khi cầm trên tay hộp sản phẩm LUTA LIFE với dòng chữ **'Made in USA'**, quý khách hàng đang sở hữu một sản phẩm được tạo ra từ một trong những nền công nghiệp dược phẩm tiên tiến nhất thế giới. Khác với các sản phẩm gia công ở nước ngoài rồi dán nhãn, LUTA LIFE được sản xuất 100% tại nhà máy nội địa Mỹ."
+        "text": "Theo thống kê y tế, số lượng bệnh nhân nhập viện vì đột quỵ vào mùa đông thường tăng 15-30%. Nguyên nhân chính là do cơ chế tự vệ của cơ thể: Khi gặp lạnh, các mạch máu ngoại biên sẽ co lại để giữ nhiệt. Điều này vô tình làm tăng sức cản ngoại vi, khiến tim phải đập mạnh hơn, dẫn đến **Huyết áp tăng vọt**."
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dgxtwb88k/image/upload/v1763867402/z7244565196819_2867db022c26075436117e872f6a08cb1_gxkwsa.jpg",
-        "alt": "Quy trình sản xuất thuốc tại nhà máy US đạt chuẩn FDA",
-        "caption": ""
+        "url": "thoi-tiet-lanh-co-tac-dong-den-benh-tim-nhu-the-nao.jpg",
+        "alt": "Mạch máu bị co lại do lạnh",
+        "caption": "Mạch máu co lại khi trời lạnh làm huyết áp tăng cao."
+      },
+      {
+        "type": "paragraph",
+        "text": "Ngoài ra, nhiệt độ thấp còn làm tăng độ nhớt của máu (máu đặc hơn), tạo điều kiện thuận lợi cho việc hình thành các cục máu đông - nguyên nhân trực tiếp gây tắc nghẽn mạch máu não."
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "Tuân thủ các tiêu chuẩn cao nhất"
+        "text": "Ai cần đặc biệt cảnh giác?"
+      },
+      {
+        "type": "list",
+        "style": "unordered",
+        "items": [
+          "Người có tiền sử **Cao huyết áp** (đặc biệt là người già).",
+          "Người bị mỡ máu cao, xơ vữa động mạch.",
+          "Người từng bị tai biến hoặc có cơn thoáng thiếu máu não.",
+          "Người hút thuốc lá và uống rượu bia nhiều."
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Quy tắc vàng bảo vệ sức khỏe mùa lạnh"
       },
       {
         "type": "list",
         "style": "ordered",
         "items": [
-          "**FDA Registered Facility:** Nhà máy sản xuất đã được đăng ký và chịu sự giám sát định kỳ của Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA). Điều này đảm bảo mọi quy trình từ nguyên liệu đến đóng gói đều tuân thủ luật pháp Mỹ.",
-          "**cGMP Compliant:** Tuân thủ Thực hành sản xuất tốt hiện hành (Current Good Manufacturing Practice). Đảm bảo sản phẩm không bị nhiễm khuẩn, đúng hàm lượng và đồng nhất về chất lượng trong mọi lô sản xuất.",
-          "**Third-Party Tested:** Sản phẩm thường xuyên được kiểm nghiệm bởi bên thứ 3 độc lập tại Mỹ để xác nhận độ tinh khiết và an toàn."
+          "**Giữ ấm cơ thể:** Đặc biệt là vùng đầu, cổ và ngực khi ra ngoài. Tránh ra khỏi giường đột ngột vào buổi sáng sớm.",
+          "**Không tắm đêm:** Tuyệt đối không tắm nước lạnh hoặc tắm quá khuya.",
+          "**Kiểm soát huyết áp:** Đo huyết áp mỗi ngày. Sử dụng **LUTA LIFE** đều đặn để duy trì chỉ số ổn định và làm bền thành mạch.",
+          "**Uống đủ nước:** Dù không khát cũng cần uống nước ấm để giảm độ cô đặc của máu."
         ]
       },
       {
-        "type": "paragraph",
-        "text": "Chính vì được sản xuất theo tiêu chuẩn nội địa Mỹ, LUTA LIFE hoàn toàn không chứa các chất phụ gia độc hại, không chứa gluten (Gluten-Free) và không biến đổi gen (Non-GMO), phù hợp với xu hướng tiêu dùng xanh và sạch của người dân Mỹ hiện đại."
+        "type": "quote",
+        "text": "“Phòng bệnh hơn chữa bệnh. Một viên LUTA LIFE mỗi ngày giúp bạn an tâm hơn trước những cơn gió lạnh thất thường.”",
+        "by": "Lời khuyên từ chuyên gia"
       }
     ]
   },
@@ -321,16 +302,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Cuộc sống tại Mỹ mang lại nhiều cơ hội nhưng cũng đầy rẫy áp lực. Các chuyên gia y tế nhận định, cộng đồng người Việt tại đây đối mặt với nguy cơ cao huyết áp và đột quỵ cao hơn do:"
-      },
-      {
-        "type": "list",
-        "style": "unordered",
-        "items": [
-          "**Chế độ ăn kiểu Mỹ:** Tiêu thụ nhiều thức ăn nhanh (burger, pizza, fries) chứa lượng muối (sodium) và chất béo bão hòa cực cao.",
-          "**Stress kéo dài:** Áp lực từ công việc (làm hãng, làm nail, kinh doanh...) và nhịp sống hối hả khiến hệ thần kinh luôn căng thẳng.",
-          "**Thời tiết khắc nghiệt:** Sự thay đổi nhiệt độ đột ngột ở các bang lạnh cũng ảnh hưởng xấu đến mạch máu người lớn tuổi."
-        ]
+        "text": "Cuộc sống tại Mỹ mang lại nhiều cơ hội nhưng cũng đầy rẫy áp lực. Cộng đồng người Việt tại đây đối mặt với nguy cơ cao huyết áp do chế độ ăn nhiều muối và stress kéo dài."
       },
       {
         "type": "image",
@@ -345,15 +317,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Để bảo vệ sức khỏe nơi xứ người, các bác sĩ khuyên bạn:"
-      },
-      {
-        "type": "paragraph",
-        "text": "1. **Điều chỉnh dinh dưỡng:** Cố gắng nấu ăn tại nhà, giảm lượng muối trong các món kho, canh. Tăng cường rau xanh."
-      },
-      {
-        "type": "paragraph",
-        "text": "2. **Sử dụng LUTA LIFE mỗi ngày:** Đây là giải pháp tiện lợi và hiệu quả nhất cho người bận rộn. Với công thức 2-trong-1, vừa hạ áp vừa bổ não, bạn không cần uống quá nhiều loại thuốc lỉnh kỉnh. Sản phẩm nội địa Mỹ nên chất lượng luôn được đảm bảo tốt nhất."
+        "text": "Để bảo vệ sức khỏe nơi xứ người, hãy điều chỉnh dinh dưỡng, giảm mặn và sử dụng LUTA LIFE mỗi ngày để ổn định huyết áp và bổ não."
       },
       {
         "type": "gallery",
@@ -366,7 +330,7 @@
           {
             "url": "https://cafefcdn.com/203337114487263232/2023/12/26/image001-2534-1692788403-17035820962141820105067.jpg",
             "alt": "Gia đình người Việt hạnh phúc sum vầy",
-            "caption": "Gia đình sum vầy, sức khỏe dồi dào"
+            "caption": "Gia đình sum vầy"
           }
         ]
       }
@@ -396,7 +360,7 @@
       },
       {
         "type": "paragraph",
-        "text": "- One day, a close friend recommended LUTA LIFE – Blood Pressure Support to me. \n- I wasn’t sure at first, but I decided to give it a try.\n- And honestly, it was one of the best decisions I’ve made for my health.\n\n- After about three weeks, I started to notice real changes:\n+ My blood pressure became stable and balanced.\n+ The dizziness and fatigue almost disappeared.\n+ I could sleep better and feel refreshed every morning.\n+ Now, at 60, I feel healthier, more energetic, and truly at peace.\n+ “Don’t wait until it’s too late to take care of your heart. Trust me, your health is worth it.”"
+        "text": "- One day, a close friend recommended LUTA LIFE – Blood Pressure Support to me.\n- I wasn’t sure at first, but I decided to give it a try.\n- And honestly, it was one of the best decisions I’ve made for my health."
       },
       {
         "type": "image",
