@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { API_BASE } from "./api";
 import { IoMdClose } from "react-icons/io";
 
-export default function BookAnAppointment({ onClose }) {
-  const [form, setForm] = useState({
+export default function ProductOrderForm({ product, quantity, onClose }) {
+  const formatCurrency = (amount) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(amount);
+
+  const [formData, setFormData] = useState({
     name: "",
     phone: "",
     address: "",
-    note: "",
+    notes: "", 
   });
-  const [loading, setLoading] = useState(false);
-  
-  // State hiện popup xác nhận đóng
+
+  const [status, setStatus] = useState("idle");
   const [showConfirmClose, setShowConfirmClose] = useState(false);
 
-  // ✅ FIX BUG: Khóa cuộn trang web (body) khi popup mở
+  // ✅ 1. Fix lỗi trượt màn hình nền
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -23,13 +31,12 @@ export default function BookAnAppointment({ onClose }) {
   }, []);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Hàm kiểm tra dữ liệu trước khi đóng form
   const handleCloseSafe = () => {
-    const hasData = form.name.trim() || form.phone.trim() || form.address.trim() || form.note.trim();
-    if (hasData) {
+    const hasData = formData.name.trim() || formData.phone.trim() || formData.address.trim() || formData.notes.trim();
+    if (hasData && status !== "success") {
       setShowConfirmClose(true);
     } else {
       onClose();
@@ -38,46 +45,40 @@ export default function BookAnAppointment({ onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setStatus("loading");
 
-    const submissionData = {
-      ...form,
-      service: "ĐẶT LỊCH KHÁM",
+    // ✅ 2. QUAN TRỌNG: Ghép thông tin sản phẩm vào 'note'
+    const orderDetails = {
+      name: formData.name,
+      phone: formData.phone,
+      address: formData.address,
+      service: "ĐẶT HÀNG ONLINE",
       date: new Date().toISOString().split('T')[0],
+      // Dòng này đảm bảo Admin thấy được khách đặt cái gì
+      note: `Sản phẩm: ${product.title} (x${quantity})\nTổng tiền: ${formatCurrency(product.price * quantity)}\nĐịa chỉ giao hàng: ${formData.address}\nGhi chú thêm: ${formData.notes}`
     };
 
     try {
-      const res = await fetch(`${API_BASE}/api/appointments`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submissionData),
-      });
-
-      if (res.ok) {
-        alert("✅ Đặt lịch thành công! Chúng tôi sẽ liên hệ sớm.");
-        setForm({ name: "", phone: "", address: "", note: "" });
+      await axios.post(`${API_BASE}/api/appointments`, orderDetails);
+      setStatus("success");
+      setTimeout(() => {
         onClose();
-      } else {
-        const err = await res.json();
-        alert("❌ Lỗi: " + (err.message || "Không gửi được"));
-      }
-    } catch (err) {
-      console.error("❌ Lỗi gửi form", err);
-      alert("Không kết nối được server");
-    } finally {
-      setLoading(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Lỗi gửi đơn:", error);
+      setStatus("error");
     }
   };
 
   return (
     <>
-      {/* --- FORM CHÍNH --- */}
       <div 
         className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-md transition-all duration-300"
         onClick={handleCloseSafe}
       >
         <div 
-          className="relative w-[95%] md:w-[60%] max-w-4xl rounded-[2rem] bg-white p-6 md:p-12 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
+          // ✅ Popup 80% màn hình PC
+          className="relative w-[95%] md:w-[80%] rounded-[2rem] bg-white p-6 md:p-12 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
           onClick={(e) => e.stopPropagation()}
         >
           <button 
@@ -88,51 +89,82 @@ export default function BookAnAppointment({ onClose }) {
           </button>
 
           <h2 className="mb-2 text-center text-3xl md:text-4xl font-bold text-[#031432] tracking-tight">
-            Đặt lịch tư vấn
+            Xác nhận đơn hàng
           </h2>
-          <p className="text-center text-gray-500 mb-10">
-            Để lại thông tin, chuyên gia của chúng tôi sẽ liên hệ lại ngay.
-          </p>
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="group">
-                  <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Họ và tên</label>
-                  <input required name="name" value={form.name} onChange={handleChange} type="text" placeholder="Ví dụ: John Nguyen" 
-                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
-                  />
-                </div>
-
-                <div className="group">
-                  <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Số điện thoại</label>
-                  <input required name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="(+1) 234 567 890" 
-                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
-                  />
-                </div>
+          <p className="text-center text-gray-500 mb-8">Vui lòng kiểm tra kỹ thông tin trước khi hoàn tất</p>
+          
+          {/* Thông tin sản phẩm (Chỉ hiển thị, logic gửi nằm ở handleSubmit) */}
+          <div className="mb-10 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-3xl border border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-inner">
+            <div className="flex items-center gap-5">
+               <div className="p-2 bg-white rounded-2xl shadow-sm border border-blue-100">
+                 <img src={product.cover} alt="product" className="w-20 h-20 object-cover rounded-xl" />
+               </div>
+               <div>
+                  <p className="font-bold text-[#031432] text-lg md:text-xl line-clamp-1">{product.title}</p>
+                  <p className="text-sm text-gray-600 mt-1">Số lượng: <b className="text-[#1678F2] text-lg">{quantity}</b></p>
+               </div>
             </div>
-
-            <div className="group">
-              <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Địa chỉ (Tùy chọn)</label>
-              <input name="address" value={form.address} onChange={handleChange} type="text" placeholder="Thành phố, Bang..." 
-                className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
-              />
+            <div className="text-right border-t md:border-t-0 border-blue-200 pt-4 md:pt-0 pl-0 md:pl-6">
+              <p className="text-sm text-gray-500 font-medium uppercase tracking-wide">Tổng thanh toán</p>
+              <p className="text-3xl font-extrabold text-[#1678F2] mt-1">{formatCurrency(product.price * quantity)}</p>
             </div>
+          </div>
 
-            <div className="group">
-              <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Vấn đề cần tư vấn</label>
-              <textarea name="note" value={form.note} onChange={handleChange} rows="3" placeholder="Tôi đang bị cao huyết áp..." 
-                className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none placeholder-gray-400"
-              ></textarea>
+          {status === "success" ? (
+            <div className="text-center py-16">
+              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-100 animate-bounce">
+                <svg className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-bold text-green-700 mb-3">Đặt hàng thành công!</h3>
+              <p className="text-gray-600 text-lg">Cảm ơn bạn đã tin tưởng LUTA LIFE.<br/>Chúng tôi sẽ liên hệ sớm nhất để xác nhận.</p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="group">
+                    <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Họ và tên</label>
+                    <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Ví dụ: John Nguyen" 
+                      className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                    />
+                  </div>
 
-            <button disabled={loading} type="submit" className="mt-4 w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-5 text-xl font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1 hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]">
-              {loading ? "Đang gửi..." : "Gửi yêu cầu"}
-            </button>
-          </form>
+                  <div className="group">
+                    <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Số điện thoại</label>
+                    <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="(+1) 234 567 890" 
+                      className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                    />
+                  </div>
+              </div>
+
+              <div className="group">
+                <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Địa chỉ nhận hàng (Tại Mỹ)</label>
+                <input required name="address" value={formData.address} onChange={handleChange} type="text" placeholder="1234 Main St, San Jose, CA 95122, USA" 
+                  className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                />
+              </div>
+
+              <div className="group">
+                <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Ghi chú (Tùy chọn)</label>
+                <textarea name="notes" value={formData.notes} onChange={handleChange} rows="3" placeholder="Lời nhắn cho người bán..." 
+                  className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none placeholder-gray-400"
+                ></textarea>
+              </div>
+
+              <button disabled={status === "loading"} type="submit" className="mt-4 w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-5 text-xl font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1 hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]">
+                {status === "loading" ? "Đang xử lý..." : "Xác nhận đặt hàng"}
+              </button>
+
+              {status === "error" && (
+                <p className="text-center text-sm font-medium text-red-500 bg-red-50 p-4 rounded-xl border border-red-100 animate-shake">❌ Có lỗi xảy ra, vui lòng kiểm tra lại kết nối.</p>
+              )}
+            </form>
+          )}
         </div>
       </div>
 
-      {/* --- POPUP XÁC NHẬN ĐÓNG --- */}
+      {/* POPUP XÁC NHẬN - Nút 50% width trên PC */}
       {showConfirmClose && (
         <div 
           className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm animate-fade-in"
@@ -147,7 +179,7 @@ export default function BookAnAppointment({ onClose }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Hủy đăng ký?</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Hủy đơn hàng?</h3>
             <p className="text-gray-500 mb-8">Thông tin bạn vừa nhập sẽ bị mất. Bạn có chắc chắn muốn thoát không?</p>
             
             <div className="flex gap-3 justify-center w-full md:w-1/2 mx-auto">
