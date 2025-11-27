@@ -17,7 +17,7 @@ function AppointmentsPage() {
   }, []);
 
   return (
-    <>
+    <div className="p-36">
     <Navbar />
     <div className="p-6">
       <h2 className="text-xl font-bold mb-4">Danh sách lịch hẹn</h2>
@@ -44,7 +44,7 @@ function AppointmentsPage() {
         </tbody>
       </table>
     </div>
-  </>
+  </div>
   );
 }
 
