@@ -22,7 +22,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
   const [status, setStatus] = useState("idle");
   const [showConfirmClose, setShowConfirmClose] = useState(false);
 
-  // ✅ 1. Fix lỗi trượt màn hình nền
+  // Fix lỗi trượt màn hình nền
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -36,6 +36,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
   const handleCloseSafe = () => {
     const hasData = formData.name.trim() || formData.phone.trim() || formData.address.trim() || formData.notes.trim();
+    
     if (hasData && status !== "success") {
       setShowConfirmClose(true);
     } else {
@@ -47,14 +48,12 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
     e.preventDefault();
     setStatus("loading");
 
-    // ✅ 2. QUAN TRỌNG: Ghép thông tin sản phẩm vào 'note'
     const orderDetails = {
       name: formData.name,
       phone: formData.phone,
       address: formData.address,
       service: "ĐẶT HÀNG ONLINE",
       date: new Date().toISOString().split('T')[0],
-      // Dòng này đảm bảo Admin thấy được khách đặt cái gì
       note: `Sản phẩm: ${product.title} (x${quantity})\nTổng tiền: ${formatCurrency(product.price * quantity)}\nĐịa chỉ giao hàng: ${formData.address}\nGhi chú thêm: ${formData.notes}`
     };
 
@@ -72,13 +71,14 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
   return (
     <>
+      {/* FORM CHÍNH */}
       <div 
         className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-md transition-all duration-300"
         onClick={handleCloseSafe}
       >
         <div 
-          // ✅ Popup 80% màn hình PC
-          className="relative w-[95%] md:w-[80%] rounded-[2rem] bg-white p-6 md:p-12 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
+          // ✅ CẬP NHẬT: md:w-[60%] cho form chính trên PC
+          className="relative w-[95%] md:w-[60%] rounded-[2rem] bg-white p-6 md:p-12 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
           onClick={(e) => e.stopPropagation()}
         >
           <button 
@@ -93,7 +93,6 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
           </h2>
           <p className="text-center text-gray-500 mb-8">Vui lòng kiểm tra kỹ thông tin trước khi hoàn tất</p>
           
-          {/* Thông tin sản phẩm (Chỉ hiển thị, logic gửi nằm ở handleSubmit) */}
           <div className="mb-10 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-3xl border border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-inner">
             <div className="flex items-center gap-5">
                <div className="p-2 bg-white rounded-2xl shadow-sm border border-blue-100">
@@ -171,7 +170,8 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
           onClick={() => setShowConfirmClose(false)} 
         >
           <div 
-            className="bg-white p-8 rounded-3xl shadow-2xl w-[95%] md:w-[80%] text-center scale-100 animate-pop-in border border-gray-100"
+            // ✅ CẬP NHẬT: md:w-[40%] cho popup hủy đơn trên PC
+            className="bg-white p-8 rounded-3xl shadow-2xl w-[95%] md:w-[40%] text-center scale-100 animate-pop-in border border-gray-100"
             onClick={(e) => e.stopPropagation()} 
           >
             <div className="mx-auto mb-4 w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center">
