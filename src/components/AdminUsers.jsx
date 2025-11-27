@@ -157,7 +157,7 @@ function AdminDashboard() {
   return (
     <div>
       <Navbar />
-      <div className="p-6">
+      <div className="p-36">
         <div className="flex gap-4 mb-6">
           {role === "admin" && (
             <button onClick={() => setTab("users")} className={`px-4 py-2 rounded ${tab === "users" ? "bg-blue-600 text-white" : "bg-gray-200"}`}>Người dùng</button>
