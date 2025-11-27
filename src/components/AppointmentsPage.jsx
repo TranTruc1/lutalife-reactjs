@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "./api";
+import Navbar from "./Navbar";
 
 function AppointmentsPage() {
   const [apps, setApps] = useState([]);
@@ -16,6 +17,8 @@ function AppointmentsPage() {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="p-6">
       <h2 className="text-xl font-bold mb-4">Danh sách lịch hẹn</h2>
       <table className="w-full border">
@@ -41,6 +44,7 @@ function AppointmentsPage() {
         </tbody>
       </table>
     </div>
+  </>
   );
 }
 
