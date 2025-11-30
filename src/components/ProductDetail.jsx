@@ -46,11 +46,12 @@ export default function ProductDetail() {
     );
   }
 
+  // ✅ CẬP NHẬT: Hiển thị 2 số thập phân (minimumFractionDigits: 2)
   const formatCurrency = (amount) =>
     new Intl.NumberFormat("en-US", { 
       style: "currency", 
       currency: "USD",
-      minimumFractionDigits: 0
+      minimumFractionDigits: 2
     }).format(amount);
 
   const allImages = product.images && product.images.length > 0 
