@@ -9,7 +9,11 @@
     "cover": "/vien-uong-luta-life.jpg",
     "coverAlt": "Hộp viên uống LUTA LIFE - Blood Pressure Support hỗ trợ huyết áp Made in USA",
     "images": [
-      "/vien-uong-luta-life.jpg"
+      "/vien-uong-luta-life.jpg",
+      "/thanh-phan-tu-nhien.png",
+      "/fda-1.jpg",
+      "/fda-2.jpg"
+
     ],
     "blocks": [
       {
@@ -59,7 +63,13 @@
     "cover": "/luta-life-vong-huyet-ap-toma-nhat-ban.jpg",
     "coverAlt": "Vòng đeo cổ ổn định huyết áp TOMA Nhật Bản chính hãng",
     "images": [
-      "/luta-life-vong-huyet-ap-toma-nhat-ban.jpg"
+      "/luta-life-vong-huyet-ap-toma-nhat-ban.jpg",
+      "/a2.jpg",
+      "/a3.jpg",
+      "/a4.jpg",
+      "/a5.png",
+      "/a6.jpg",
+      "/a7.jpg"
     ],
     "blocks": [
       {
