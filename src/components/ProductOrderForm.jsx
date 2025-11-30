@@ -77,86 +77,90 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
         onClick={handleCloseSafe}
       >
         <div 
-          // ✅ CẬP NHẬT: md:w-[60%] cho form chính trên PC
-          className="relative w-[95%] md:w-[60%] rounded-[2rem] bg-white p-6 md:p-12 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
+          // ✅ TỐI ƯU: Giảm padding từ p-12 xuống p-8, mobile p-5 để đỡ tốn diện tích
+          className="relative w-[95%] md:w-[60%] rounded-[1.5rem] bg-white p-5 md:p-8 shadow-2xl animate-fade-in-up overflow-y-auto max-h-[90vh] border border-gray-100"
           onClick={(e) => e.stopPropagation()}
         >
           <button 
             onClick={handleCloseSafe} 
-            className="absolute right-5 top-5 text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-red-50 rounded-full group"
+            className="absolute right-4 top-4 text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-red-50 rounded-full group"
           >
-            <IoMdClose size={32} className="group-hover:rotate-90 transition-transform duration-300" />
+            <IoMdClose size={28} className="group-hover:rotate-90 transition-transform duration-300" />
           </button>
 
-          <h2 className="mb-2 text-center text-3xl md:text-4xl font-bold text-[#031432] tracking-tight">
+          <h2 className="mb-1 text-center text-2xl md:text-3xl font-bold text-[#031432] tracking-tight">
             Xác nhận đơn hàng
           </h2>
-          <p className="text-center text-gray-500 mb-8">Vui lòng kiểm tra kỹ thông tin trước khi hoàn tất</p>
+          {/* Giảm margin bottom tiêu đề */}
+          <p className="text-center text-gray-500 mb-6 text-sm">Vui lòng kiểm tra kỹ thông tin trước khi hoàn tất</p>
           
-          <div className="mb-10 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-3xl border border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-inner">
-            <div className="flex items-center gap-5">
-               <div className="p-2 bg-white rounded-2xl shadow-sm border border-blue-100">
-                 <img src={product.cover} alt="product" className="w-20 h-20 object-cover rounded-xl" />
+          {/* ✅ TỐI ƯU: Khung sản phẩm gọn hơn (p-4, mb-6) */}
+          <div className="mb-6 bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-2xl border border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-inner">
+            <div className="flex items-center gap-4">
+               <div className="p-1.5 bg-white rounded-xl shadow-sm border border-blue-100">
+                 <img src={product.cover} alt="product" className="w-16 h-16 object-cover rounded-lg" />
                </div>
                <div>
-                  <p className="font-bold text-[#031432] text-lg md:text-xl line-clamp-1">{product.title}</p>
-                  <p className="text-sm text-gray-600 mt-1">Số lượng: <b className="text-[#1678F2] text-lg">{quantity}</b></p>
+                  <p className="font-bold text-[#031432] text-base md:text-lg line-clamp-1">{product.title}</p>
+                  <p className="text-sm text-gray-600 mt-0.5">Số lượng: <b className="text-[#1678F2] text-base">{quantity}</b></p>
                </div>
             </div>
-            <div className="text-right border-t md:border-t-0 border-blue-200 pt-4 md:pt-0 pl-0 md:pl-6">
-              <p className="text-sm text-gray-500 font-medium uppercase tracking-wide">Tổng thanh toán</p>
-              <p className="text-3xl font-extrabold text-[#1678F2] mt-1">{formatCurrency(product.price * quantity)}</p>
+            <div className="text-right border-t md:border-t-0 border-blue-200 pt-3 md:pt-0 pl-0 md:pl-6">
+              <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Tổng thanh toán</p>
+              <p className="text-2xl font-extrabold text-[#1678F2] mt-0.5">{formatCurrency(product.price * quantity)}</p>
             </div>
           </div>
 
           {status === "success" ? (
-            <div className="text-center py-16">
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-100 animate-bounce">
-                <svg className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="text-center py-12">
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 animate-bounce">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-green-700 mb-3">Đặt hàng thành công!</h3>
-              <p className="text-gray-600 text-lg">Cảm ơn bạn đã tin tưởng LUTA LIFE.<br/>Chúng tôi sẽ liên hệ sớm nhất để xác nhận.</p>
+              <h3 className="text-2xl font-bold text-green-700 mb-2">Đặt hàng thành công!</h3>
+              <p className="text-gray-600 text-base">Cảm ơn bạn đã tin tưởng LUTA LIFE.<br/>Chúng tôi sẽ liên hệ sớm nhất để xác nhận.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            // ✅ TỐI ƯU: Form gap-5 (thay vì 8), input py-3 (thay vì 4)
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="group">
-                    <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Họ và tên</label>
+                    <label className="mb-1.5 block text-xs font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Họ và tên</label>
                     <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Ví dụ: John Nguyen" 
-                      className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-base focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
                     />
                   </div>
 
                   <div className="group">
-                    <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Số điện thoại</label>
+                    <label className="mb-1.5 block text-xs font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Số điện thoại</label>
                     <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="(+1) 234 567 890" 
-                      className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-base focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
                     />
                   </div>
               </div>
 
               <div className="group">
-                <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Địa chỉ nhận hàng (Tại Mỹ)</label>
+                <label className="mb-1.5 block text-xs font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Địa chỉ nhận hàng (Tại Mỹ)</label>
                 <input required name="address" value={formData.address} onChange={handleChange} type="text" placeholder="1234 Main St, San Jose, CA 95122, USA" 
-                  className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-base focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all placeholder-gray-400" 
                 />
               </div>
 
               <div className="group">
-                <label className="mb-2 block text-sm font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Ghi chú (Tùy chọn)</label>
-                <textarea name="notes" value={formData.notes} onChange={handleChange} rows="3" placeholder="Lời nhắn cho người bán..." 
-                  className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none placeholder-gray-400"
+                <label className="mb-1.5 block text-xs font-bold text-gray-700 uppercase tracking-wide group-focus-within:text-[#1678F2] transition-colors">Ghi chú (Tùy chọn)</label>
+                <textarea name="notes" value={formData.notes} onChange={handleChange} rows="2" placeholder="Lời nhắn cho người bán..." 
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-base focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none placeholder-gray-400"
                 ></textarea>
               </div>
 
-              <button disabled={status === "loading"} type="submit" className="mt-4 w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-5 text-xl font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1 hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]">
+              {/* Nút bấm gọn hơn: py-3.5 */}
+              <button disabled={status === "loading"} type="submit" className="mt-2 w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-3.5 text-lg font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1 hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]">
                 {status === "loading" ? "Đang xử lý..." : "Xác nhận đặt hàng"}
               </button>
 
               {status === "error" && (
-                <p className="text-center text-sm font-medium text-red-500 bg-red-50 p-4 rounded-xl border border-red-100 animate-shake">❌ Có lỗi xảy ra, vui lòng kiểm tra lại kết nối.</p>
+                <p className="text-center text-sm font-medium text-red-500 bg-red-50 p-3 rounded-lg border border-red-100 animate-shake">❌ Có lỗi xảy ra, vui lòng kiểm tra lại kết nối.</p>
               )}
             </form>
           )}
@@ -170,7 +174,6 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
           onClick={() => setShowConfirmClose(false)} 
         >
           <div 
-            // ✅ CẬP NHẬT: md:w-[40%] cho popup hủy đơn trên PC
             className="bg-white p-8 rounded-3xl shadow-2xl w-[95%] md:w-[40%] text-center scale-100 animate-pop-in border border-gray-100"
             onClick={(e) => e.stopPropagation()} 
           >
