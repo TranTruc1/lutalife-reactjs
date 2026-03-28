@@ -41,7 +41,7 @@ export default function VideoSection() {
       {/* ✅ Thông tin liên hệ + chứng nhận (có nền gradient) */}
       <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#E0F2FE] via-[#EDE9FE] to-[#FCE7F3] p-6 md:p-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <PhoneCard phone="+1 832-650-2216" />
+          <PhoneCard phone="+1 281-675-2886" />
           <ContactCard Icon={MdEmail} title="Email" text="Lutalifeusa@gmail.com" />
           <ContactCard
             Icon={FaMapMarkerAlt}
