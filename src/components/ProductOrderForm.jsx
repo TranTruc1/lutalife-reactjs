@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { IoMdClose } from "react-icons/io";
 
@@ -13,6 +13,18 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
   const [status, setStatus] = useState("idle");
   const [countdown, setCountdown] = useState(5);
   const [ip, setIp] = useState("unknown");
+
+  // Lock chiều cao ngay khi mount — trước khi keyboard xuất hiện
+  const lockedHeight = useRef(
+    typeof window !== "undefined" ? Math.round(window.innerHeight * 0.92) : 600
+  );
+
+  // Khoá scroll body khi modal mở
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, []);
 
   useEffect(() => {
     fetch("https://api.ipify.org?format=json")
@@ -37,13 +49,10 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // Bấm ra ngoài — hỏi nếu có dữ liệu
   const handleBackdropClick = () => {
     const hasData = Object.values(formData).some((v) => v.trim() !== "");
     if (hasData) {
-      if (window.confirm("Bạn đã nhập thông tin. Bạn có chắc muốn đóng không?")) {
-        onClose();
-      }
+      if (window.confirm("Bạn đã nhập thông tin. Bạn có chắc muốn đóng không?")) onClose();
     } else {
       onClose();
     }
@@ -73,14 +82,8 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
     }
   };
 
-  // CSS dùng chung cho input — font-size 16px chống zoom iOS
-  const inputCls = `
-    w-full rounded-xl border border-gray-200 bg-gray-50
-    px-3 py-2.5
-    text-base          
-    focus:border-[#1678F2] focus:bg-white focus:outline-none
-    focus:ring-2 focus:ring-[#1678F2]/10 transition-all
-  `;
+  const inputCls =
+    "w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1678F2]/10 transition-all";
 
   return (
     <>
@@ -89,12 +92,13 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
         className="fixed inset-0 z-[999] flex items-end md:items-center justify-center bg-black/60 backdrop-blur-sm"
         onClick={handleBackdropClick}
       >
-        {/* Sheet — stopPropagation để click bên trong không trigger backdrop */}
+        {/* Sheet — chiều cao cố định, KHÔNG dùng dvh */}
         <div
-          className="relative w-full md:w-[60%] md:max-w-2xl bg-white rounded-t-3xl md:rounded-3xl flex flex-col max-h-[92dvh] md:max-h-[90vh]"
+          className="relative w-full md:w-[60%] md:max-w-2xl bg-white rounded-t-3xl md:rounded-3xl flex flex-col overflow-hidden"
+          style={{ height: lockedHeight.current }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Handle bar mobile */}
+          {/* Handle bar */}
           <div className="flex justify-center pt-3 pb-1 md:hidden shrink-0">
             <div className="w-10 h-1 rounded-full bg-gray-300" />
           </div>
@@ -128,16 +132,18 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 px-5 py-4 overflow-y-auto">
+          {/* Form — scroll bên trong nếu cần */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-3 px-5 py-4 overflow-y-auto flex-1"
+          >
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Họ và tên</label>
                 <input
                   required name="name" value={formData.name} onChange={handleChange}
                   type="text" placeholder="John Nguyen"
-                  className={inputCls}
-                  style={{ fontSize: 16 }} // ← chống zoom iOS
+                  className={inputCls} style={{ fontSize: 16 }}
                 />
               </div>
               <div>
@@ -145,8 +151,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
                 <input
                   required name="phone" value={formData.phone} onChange={handleChange}
                   type="tel" placeholder="(+1) 234 567 890"
-                  className={inputCls}
-                  style={{ fontSize: 16 }}
+                  className={inputCls} style={{ fontSize: 16 }}
                 />
               </div>
             </div>
@@ -156,8 +161,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
               <input
                 required name="address" value={formData.address} onChange={handleChange}
                 type="text" placeholder="1234 Main St, San Jose, CA 95122"
-                className={inputCls}
-                style={{ fontSize: 16 }}
+                className={inputCls} style={{ fontSize: 16 }}
               />
             </div>
 
@@ -166,8 +170,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
               <textarea
                 name="note" value={formData.note} onChange={handleChange}
                 rows={2} placeholder="Lời nhắn cho người bán..."
-                className={`${inputCls} resize-none`}
-                style={{ fontSize: 16 }}
+                className={`${inputCls} resize-none`} style={{ fontSize: 16 }}
               />
             </div>
 
