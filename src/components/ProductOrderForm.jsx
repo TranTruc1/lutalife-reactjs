@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { IoMdClose } from "react-icons/io";
 
 const SHEET_URL =
@@ -9,11 +10,10 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0 }).format(amount);
 
   const [formData, setFormData] = useState({ name: "", phone: "", address: "", note: "" });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [countdown, setCountdown] = useState(5);
-
-  // Lấy IP thực
   const [ip, setIp] = useState("unknown");
+
   useEffect(() => {
     fetch("https://api.ipify.org?format=json")
       .then((res) => res.json())
@@ -21,18 +21,13 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
       .catch(() => {});
   }, []);
 
-  // Countdown khi success
   useEffect(() => {
     let timer;
     if (status === "success") {
       setCountdown(5);
       timer = setInterval(() => {
         setCountdown((prev) => {
-          if (prev <= 1) {
-            clearInterval(timer);
-            onClose();
-            return 0;
-          }
+          if (prev <= 1) { clearInterval(timer); onClose(); return 0; }
           return prev - 1;
         });
       }, 1000);
@@ -45,7 +40,6 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
-
     const total = formatCurrency(product.price * quantity);
     const payload = {
       product: `${product.title} (x${quantity}) — ${total}`,
@@ -55,7 +49,6 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
       payment: formData.note || "—",
       ip,
     };
-
     try {
       await fetch(SHEET_URL, {
         method: "POST",
@@ -69,99 +62,129 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-      <div className="relative w-[90%] md:w-[60%] max-w-4xl rounded-3xl bg-white p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[90vh]">
+    <div className="fixed inset-0 z-[999] flex items-end md:items-center justify-center bg-black/60 backdrop-blur-sm">
+      {/*
+        Mobile: sheet trượt lên từ dưới (items-end), full width, bo góc trên
+        Desktop: modal giữa màn hình như cũ
+      */}
+      <div className="
+        relative w-full md:w-[60%] md:max-w-2xl
+        bg-white
+        rounded-t-3xl md:rounded-3xl
+        flex flex-col
+        max-h-[92dvh] md:max-h-[90vh]
+      ">
+        {/* Header cố định */}
+        <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b border-gray-100 shrink-0">
+          <h2 className="text-lg font-bold text-[#031432]">Xác nhận đơn hàng</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1.5 hover:bg-gray-100 rounded-full transition">
+            <IoMdClose size={22} />
+          </button>
+        </div>
 
-        <button onClick={onClose} className="absolute right-5 top-5 text-gray-400 hover:text-gray-600 transition p-2 hover:bg-gray-100 rounded-full">
-          <IoMdClose size={28} />
-        </button>
-
-        <h2 className="mb-6 text-center text-2xl md:text-3xl font-bold text-[#031432]">Xác nhận đơn hàng</h2>
-
-        {/* Tóm tắt đơn hàng */}
-        <div className="mb-8 bg-[#F2F7FF] p-5 rounded-2xl border border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <img src={product.cover} alt="product" className="w-16 h-16 object-cover rounded-lg bg-white border border-gray-200 shadow-sm" />
+        {/* Tóm tắt sản phẩm — compact */}
+        <div className="flex items-center justify-between gap-3 px-5 py-3 bg-[#F2F7FF] border-b border-blue-100 shrink-0">
+          <div className="flex items-center gap-3">
+            <img src={product.cover} alt="product" className="w-12 h-12 object-cover rounded-lg border border-gray-200 bg-white shadow-sm shrink-0" />
             <div>
-              <p className="font-bold text-[#031432] text-lg line-clamp-1">{product.title}</p>
-              <p className="text-sm text-gray-500">Số lượng: <b className="text-black">{quantity}</b></p>
+              <p className="font-bold text-[#031432] text-sm leading-tight line-clamp-1">{product.title}</p>
+              <p className="text-xs text-gray-500 mt-0.5">Số lượng: <b className="text-black">{quantity}</b></p>
             </div>
           </div>
-          <div className="text-right border-t md:border-t-0 border-blue-200 pt-2 md:pt-0">
-            <p className="text-sm text-gray-500">Tổng thanh toán</p>
-            <p className="text-2xl font-bold text-[#1678F2]">{formatCurrency(product.price * quantity)}</p>
+          <div className="text-right shrink-0">
+            <p className="text-[10px] text-gray-400 uppercase tracking-wide">Tổng</p>
+            <p className="text-lg font-bold text-[#1678F2] leading-tight">{formatCurrency(product.price * quantity)}</p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Form — scroll nếu cần nhưng thường vừa 1 màn */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3 px-5 py-4 overflow-y-auto">
+
+          <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Họ và tên</label>
-              <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Ví dụ: John Nguyen"
-                className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all" />
+              <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Họ và tên</label>
+              <input
+                required name="name" value={formData.name} onChange={handleChange}
+                type="text" placeholder="John Nguyen"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1678F2]/10 transition-all"
+              />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Số điện thoại</label>
-              <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="(+1) 234 567 890"
-                className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all" />
+              <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Điện thoại</label>
+              <input
+                required name="phone" value={formData.phone} onChange={handleChange}
+                type="tel" placeholder="(+1) 234 567 890"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1678F2]/10 transition-all"
+              />
             </div>
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Địa chỉ nhận hàng (Tại Mỹ)</label>
-            <input required name="address" value={formData.address} onChange={handleChange} type="text" placeholder="1234 Main St, San Jose, CA 95122, USA"
-              className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all" />
+            <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Địa chỉ nhận hàng (USA)</label>
+            <input
+              required name="address" value={formData.address} onChange={handleChange}
+              type="text" placeholder="1234 Main St, San Jose, CA 95122"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1678F2]/10 transition-all"
+            />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-700 uppercase tracking-wide">Ghi chú (Tùy chọn)</label>
-            <textarea name="note" value={formData.note} onChange={handleChange} rows="3" placeholder="Lời nhắn cho người bán..."
-              className="w-full rounded-xl border border-gray-300 bg-gray-50 px-5 py-4 text-lg focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1678F2]/10 transition-all resize-none" />
+            <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Ghi chú (tùy chọn)</label>
+            <textarea
+              name="note" value={formData.note} onChange={handleChange}
+              rows={2} placeholder="Lời nhắn cho người bán..."
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:border-[#1678F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1678F2]/10 transition-all resize-none"
+            />
           </div>
 
-          <button type="submit" disabled={status === "loading"}
-            className="mt-4 w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-5 text-xl font-bold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-1 hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed">
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="w-full rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-3.5 text-base font-bold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed mt-1"
+          >
             Xác nhận đặt hàng
           </button>
 
           {status === "error" && (
-            <p className="text-center text-sm font-medium text-red-500 bg-red-50 p-3 rounded-lg">
+            <p className="text-center text-xs font-medium text-red-500 bg-red-50 p-2.5 rounded-lg">
               ❌ Có lỗi xảy ra, vui lòng kiểm tra lại kết nối.
             </p>
           )}
         </form>
       </div>
 
-      {/* Loading Overlay */}
-      {status === "loading" && (
-        <div className="fixed inset-0 z-[110] flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm">
-          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4 shadow-lg" />
-          <div className="text-xl font-bold text-blue-800 animate-pulse">Đang xử lý đơn hàng...</div>
-          <p className="text-gray-500 mt-2 text-sm">Vui lòng không đóng trình duyệt</p>
-        </div>
+      {/* Loading */}
+      {status === "loading" && createPortal(
+        <div style={{ position: "fixed", inset: 0, zIndex: 99999, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.88)", backdropFilter: "blur(4px)" }}>
+          <div style={{ width: 52, height: 52, border: "4px solid #bfdbfe", borderTopColor: "#2563eb", borderRadius: "50%", animation: "spin 0.8s linear infinite", marginBottom: 14 }} />
+          <div style={{ fontSize: "1.1rem", fontWeight: "bold", color: "#1e40af" }}>Đang xử lý đơn hàng...</div>
+          <p style={{ color: "#6b7280", marginTop: 6, fontSize: "0.8rem" }}>Vui lòng không đóng trình duyệt</p>
+        </div>,
+        document.body
       )}
 
       {/* Success Modal */}
-      {status === "success" && (
-        <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-sm w-full flex flex-col items-center text-center shadow-2xl">
-            <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
-              <div className="absolute inset-0 bg-green-400 rounded-full opacity-20 animate-ping" />
-              <div className="relative w-20 h-20 bg-green-100 rounded-full flex items-center justify-center shadow-inner">
-                <svg className="w-10 h-10 text-green-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      {status === "success" && createPortal(
+        <div style={{ position: "fixed", inset: 0, zIndex: 99999, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", padding: 16 }}>
+          <div style={{ background: "white", borderRadius: 24, padding: 32, maxWidth: 340, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", boxShadow: "0 25px 50px rgba(0,0,0,0.2)" }}>
+            <div style={{ position: "relative", width: 88, height: 88, marginBottom: 20, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ position: "absolute", inset: 0, background: "#4ade80", borderRadius: "50%", opacity: 0.2, animation: "ping 1s ease infinite" }} />
+              <div style={{ width: 72, height: 72, background: "#dcfce7", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width={36} height={36} fill="none" stroke="#16a34a" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
             </div>
-            <h3 className="text-2xl font-extrabold text-gray-900 mb-2">Đặt Thành Công!</h3>
-            <p className="text-gray-600 font-medium mb-6">
+            <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#111827", marginBottom: 8 }}>Đặt Thành Công!</h3>
+            <p style={{ color: "#4b5563", fontWeight: 500, marginBottom: 20, fontSize: "0.95rem" }}>
               Cảm ơn bạn đã tin tưởng LUTA LIFE.<br />Chúng tôi sẽ liên hệ sớm nhất để xác nhận.
             </p>
-            <div className="bg-gray-50 px-4 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-500">
-              Tự động đóng sau <span className="font-bold text-red-500 text-base">{countdown}</span> giây
+            <div style={{ background: "#f9fafb", padding: "8px 20px", borderRadius: 999, border: "1px solid #e5e7eb", fontSize: "0.85rem", color: "#6b7280" }}>
+              Tự động đóng sau <span style={{ fontWeight: 700, color: "#ef4444", fontSize: "1rem" }}>{countdown}</span> giây
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
