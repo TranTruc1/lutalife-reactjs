@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { API_BASE } from "./api";   // 👉 import đường dẫn API
-import "./BookForm.css"; // ← CSS riêng của bạn
+import "./BookForm.css";
+
+const SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbxpxLvR8v580_pSObdABIXxyTg8ag4PCiQwqbsRl71ekq2BlH_D1g6q5Gdu2pJMeIb_/exec";
+
+async function getClientIP() {
+  try {
+    const res = await fetch("https://api.ipify.org?format=json");
+    const data = await res.json();
+    return data.ip;
+  } catch {
+    return "unknown";
+  }
+}
 
 function BookAnAppointment({ onClose }) {
   const [form, setForm] = useState({
@@ -9,6 +21,7 @@ function BookAnAppointment({ onClose }) {
     address: "",
     note: "",
   });
+  const [status, setStatus] = useState("idle");
 
   useEffect(() => {
     console.log("📌 Form đã hiển thị");
@@ -21,26 +34,33 @@ function BookAnAppointment({ onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("📤 Gửi dữ liệu:", form);
+    setStatus("loading");
+
+    const ip = await getClientIP();
+
+    const payload = {
+      product: "Đặt lịch khám",
+      name: form.name,
+      phone: form.phone,
+      address: form.address || "—",
+      payment: form.note || "—",
+      ip,
+    };
 
     try {
-      const res = await fetch(`${API_BASE}/api/appointments`, {
+      await fetch(SHEET_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify(payload),
       });
-
-      if (res.ok) {
-        alert("✅ Gửi thành công!");
+      setStatus("success");
+      setTimeout(() => {
         setForm({ name: "", phone: "", address: "", note: "" });
         onClose();
-      } else {
-        const err = await res.json();
-        alert("❌ Lỗi: " + (err.message || "Không gửi được"));
-      }
+      }, 2500);
     } catch (err) {
       console.error("❌ Lỗi gửi form", err);
-      alert("Không kết nối được server");
+      setStatus("error");
     }
   };
 
@@ -58,39 +78,62 @@ function BookAnAppointment({ onClose }) {
 
         <h2 className="form-title">Đặt lịch khám</h2>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Họ và tên"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Số điện thoại"
-          value={form.phone}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Địa chỉ"
-          value={form.address}
-          onChange={handleChange}
-        />
-        <textarea
-          name="note"
-          placeholder="Ghi chú"
-          value={form.note}
-          onChange={handleChange}
-        />
-
-        <button type="submit" className="form-submit">
-          Gửi thông tin
-        </button>
+        {status === "success" ? (
+          <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
+            <div style={{ fontSize: "3rem" }}>✅</div>
+            <p style={{ fontWeight: "bold", color: "#16a34a", marginTop: "0.5rem" }}>
+              Gửi thành công!
+            </p>
+            <p style={{ color: "#555", fontSize: "0.9rem" }}>
+              Chúng tôi sẽ liên hệ với bạn sớm nhất.
+            </p>
+          </div>
+        ) : (
+          <>
+            <input
+              type="text"
+              name="name"
+              placeholder="Họ và tên"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Số điện thoại"
+              value={form.phone}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="address"
+              placeholder="Địa chỉ"
+              value={form.address}
+              onChange={handleChange}
+            />
+            <textarea
+              name="note"
+              placeholder="Ghi chú"
+              value={form.note}
+              onChange={handleChange}
+            />
+            <button
+              type="submit"
+              className="form-submit"
+              disabled={status === "loading"}
+              style={status === "loading" ? { opacity: 0.7, cursor: "not-allowed" } : {}}
+            >
+              {status === "loading" ? "Đang gửi..." : "Gửi thông tin"}
+            </button>
+            {status === "error" && (
+              <p style={{ color: "red", textAlign: "center", fontSize: "0.9rem" }}>
+                ❌ Không kết nối được, vui lòng thử lại.
+              </p>
+            )}
+          </>
+        )}
       </form>
     </div>
   );
