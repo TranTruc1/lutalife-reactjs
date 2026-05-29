@@ -50,7 +50,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
     const total = formatCurrency(product.price * quantity);
     const payload = {
-      product: `${product.title} (x${quantity}) — ${total}`,
+      product: `LUTA LIFE x${quantity} hộp - ${total} - Mã ĐH: #${orderId}`,
       name: formData.name,
       phone: formData.phone,
       address: formData.address,
