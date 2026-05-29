@@ -56,7 +56,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
       name: formData.name,
       phone: formData.phone,
       address: formData.address,
-      payment: formData.note || "—",
+      payment: formData.note || "",
       ip,
     };
 
