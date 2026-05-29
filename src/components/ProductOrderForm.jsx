@@ -48,9 +48,11 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
     e.preventDefault();
     setStatus("loading");
 
+    const orderId = `LU${Date.now().toString().slice(-8)}`;
     const total = formatCurrency(product.price * quantity);
+
     const payload = {
-      product: `LUTA LIFE x${quantity} hộp - ${total} - Mã ĐH: #${orderId}`,
+      product: `${product.title} (x${quantity}) — ${total} - Mã ĐH: #${orderId}`,
       name: formData.name,
       phone: formData.phone,
       address: formData.address,
@@ -65,10 +67,9 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
         body: JSON.stringify(payload),
       });
 
-      // Chuyển sang trang hoá đơn, truyền dữ liệu qua state
       navigate("/invoice", {
         state: {
-          orderId: `LU${Date.now().toString().slice(-8)}`,
+          orderId,
           customer: formData,
           product: { title: product.title, cover: product.cover, price: product.price },
           quantity,
@@ -95,20 +96,29 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
           style={{ height: lockedHeight.current }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Handle bar */}
           <div className="flex justify-center pt-3 pb-1 md:hidden shrink-0">
             <div className="w-10 h-1 rounded-full bg-gray-300" />
           </div>
 
+          {/* Header */}
           <div className="flex items-center justify-between px-5 pt-3 pb-3 border-b border-gray-100 shrink-0">
             <h2 className="text-lg font-bold text-[#031432]">Xác nhận đơn hàng</h2>
-            <button onClick={handleBackdropClick} className="text-gray-400 hover:text-gray-600 p-1.5 hover:bg-gray-100 rounded-full transition">
+            <button
+              onClick={handleBackdropClick}
+              className="text-gray-400 hover:text-gray-600 p-1.5 hover:bg-gray-100 rounded-full transition"
+            >
               <IoMdClose size={22} />
             </button>
           </div>
 
+          {/* Tóm tắt sản phẩm */}
           <div className="flex items-center justify-between gap-3 px-5 py-3 bg-[#F2F7FF] border-b border-blue-100 shrink-0">
             <div className="flex items-center gap-3">
-              <img src={product.cover} alt="product" className="w-12 h-12 object-cover rounded-lg border border-gray-200 bg-white shadow-sm shrink-0" />
+              <img
+                src={product.cover} alt="product"
+                className="w-12 h-12 object-cover rounded-lg border border-gray-200 bg-white shadow-sm shrink-0"
+              />
               <div>
                 <p className="font-bold text-[#031432] text-sm leading-tight line-clamp-1">{product.title}</p>
                 <p className="text-xs text-gray-500 mt-0.5">Số lượng: <b className="text-black">{quantity}</b></p>
@@ -120,26 +130,43 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
             </div>
           </div>
 
+          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 px-5 py-4 overflow-y-auto flex-1">
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Họ và tên</label>
-                <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="John Nguyen" className={inputCls} style={{ fontSize: 16 }} />
+                <input
+                  required name="name" value={formData.name} onChange={handleChange}
+                  type="text" placeholder="John Nguyen"
+                  className={inputCls} style={{ fontSize: 16 }}
+                />
               </div>
               <div>
                 <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Điện thoại</label>
-                <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="(+1) 234 567 890" className={inputCls} style={{ fontSize: 16 }} />
+                <input
+                  required name="phone" value={formData.phone} onChange={handleChange}
+                  type="tel" placeholder="(+1) 234 567 890"
+                  className={inputCls} style={{ fontSize: 16 }}
+                />
               </div>
             </div>
 
             <div>
               <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Địa chỉ nhận hàng (USA)</label>
-              <input required name="address" value={formData.address} onChange={handleChange} type="text" placeholder="1234 Main St, San Jose, CA 95122" className={inputCls} style={{ fontSize: 16 }} />
+              <input
+                required name="address" value={formData.address} onChange={handleChange}
+                type="text" placeholder="1234 Main St, San Jose, CA 95122"
+                className={inputCls} style={{ fontSize: 16 }}
+              />
             </div>
 
             <div>
               <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Ghi chú (tùy chọn)</label>
-              <textarea name="note" value={formData.note} onChange={handleChange} rows={2} placeholder="Lời nhắn cho người bán..." className={`${inputCls} resize-none`} style={{ fontSize: 16 }} />
+              <textarea
+                name="note" value={formData.note} onChange={handleChange}
+                rows={2} placeholder="Lời nhắn cho người bán..."
+                className={`${inputCls} resize-none`} style={{ fontSize: 16 }}
+              />
             </div>
 
             <button
@@ -159,6 +186,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
         </div>
       </div>
 
+      {/* Loading */}
       {status === "loading" && createPortal(
         <div style={{ position: "fixed", inset: 0, zIndex: 99999, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.88)", backdropFilter: "blur(4px)" }}>
           <div style={{ width: 52, height: 52, border: "4px solid #bfdbfe", borderTopColor: "#2563eb", borderRadius: "50%", animation: "spin 0.8s linear infinite", marginBottom: 14 }} />
