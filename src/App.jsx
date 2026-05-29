@@ -11,6 +11,7 @@ import { API_BASE } from "./components/api";
 // --- Import các trang con ---
 import ServiceDetail from "./components/ServiceDetail";
 import ProductDetail from "./components/ProductDetail";
+import InvoicePage from "./components/InvoicePage";
 
 // --- Import các thành phần giao diện ---
 import Navbar from "./components/Navbar";
@@ -33,17 +34,16 @@ function MainPage() {
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const contactRef = useRef(null);
-  const productsRef = useRef(null); 
+  const productsRef = useRef(null);
 
   return (
-    // ✅ SỬA: Bọc toàn bộ trang chủ trong div có overflow-x-hidden để cắt bỏ phần thừa ngang
     <div className="w-full overflow-x-hidden relative">
       <Navbar
         aboutRef={aboutRef}
         servicesRef={servicesRef}
         contactRef={contactRef}
       />
-      
+
       <div className="bg-[#F2F7FF]">
         <Hero />
         <ListItems />
@@ -79,7 +79,6 @@ function PrivateRoute({ children }) {
 function App() {
   const [user, setUser] = useState(null);
 
-  // Wake up backend khi FE load
   useEffect(() => {
     if (API_BASE) {
       axios
@@ -93,15 +92,16 @@ function App() {
     <Router>
       <Routes>
         {/* --- ROUTE CÔNG KHAI --- */}
-        
+
         <Route path="/" element={<MainPage />} />
-        
+
         <Route path="/product/:slug" element={<ProductDetail />} />
 
-        <Route path="/:slug" element={<ServiceDetail />} />
+        {/* ✅ Trang hoá đơn sau khi đặt hàng */}
+        <Route path="/invoice" element={<InvoicePage />} />
 
         <Route path="/ngungonzzxz" element={<Editor />} />
-        
+
         <Route
           path="/login"
           element={
@@ -112,6 +112,9 @@ function App() {
             />
           }
         />
+
+        {/* /:slug phải để SAU /invoice và /product/:slug để không bị conflict */}
+        <Route path="/:slug" element={<ServiceDetail />} />
 
         {/* --- ROUTE ADMIN --- */}
         <Route

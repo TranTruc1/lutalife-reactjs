@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
 @layer components {
   .bg-gradient-lr {
     @apply bg-gradient-to-r from-primary-start to-primary-end;
