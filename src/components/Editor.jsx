@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // ✅ Danh sách các file ảnh có trong thư mục public của bạn
 // Bạn hãy bổ sung tên các file ảnh bạn đã copy vào folder public tại đây
@@ -572,7 +572,7 @@ function Preview({ service, previewRefs, onClickBlock, editingBlockIndex }) {
         };
 
         switch (block.type) {
-          case "heading":
+          case "heading": {
             const HeadingTag = `h${block.level || 2}`;
             const sizeClass = block.level === 3 ? "text-xl" : "text-2xl";
             return (
@@ -583,6 +583,7 @@ function Preview({ service, previewRefs, onClickBlock, editingBlockIndex }) {
                 {block.text}
               </HeadingTag>
             );
+          }
           case "paragraph":
             return (
               <p {...baseProps} className={baseProps.className + " mb-4 text-gray-700 leading-relaxed"}>
@@ -636,7 +637,7 @@ function Preview({ service, previewRefs, onClickBlock, editingBlockIndex }) {
                 {...baseProps}
                 className={baseProps.className + " border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-lg italic my-6 text-gray-700"}
               >
-                "{block.text}"
+                &ldquo;{block.text}&rdquo;
                 {block.by && <footer className="text-sm font-semibold not-italic mt-2 text-right">— {block.by}</footer>}
               </blockquote>
             );

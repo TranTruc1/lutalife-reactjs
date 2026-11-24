@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import products from "../data/products.json";
 import Navbar from "./Navbar";
@@ -35,12 +35,25 @@ export default function ProductDetail() {
     }
   }, [slug, product]);
 
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => e.key === "Escape" && setIsLightboxOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [isLightboxOpen]);
+
   if (!product) {
     return (
       <>
         <Navbar />
         <div className="pt-40 text-center font-bold text-xl text-gray-800">
           Không tìm thấy sản phẩm
+          <div className="mt-4"><a href="/" className="text-base font-semibold text-[#1678F2] underline">Về trang chủ</a></div>
         </div>
       </>
     );
@@ -157,7 +170,7 @@ export default function ProductDetail() {
                     className="absolute top-0 w-full h-full p-4 md:p-6 flex items-center justify-center pointer-events-none"
                     style={{ left: '-100%', transform: `translateX(${swipeOffset}px)`, transition: isSwiping ? 'none' : 'transform 0.3s ease-out' }}
                  >
-                    <img src={prevImageSrc} alt="prev" className="w-full h-full object-contain opacity-50" />
+                    <img src={prevImageSrc} alt="" className="w-full h-full object-contain opacity-50" />
                  </div>
 
                  {/* 2. Ảnh HIỆN TẠI */}
@@ -173,7 +186,7 @@ export default function ProductDetail() {
                     className="absolute top-0 w-full h-full p-4 md:p-6 flex items-center justify-center pointer-events-none"
                     style={{ left: '100%', transform: `translateX(${swipeOffset}px)`, transition: isSwiping ? 'none' : 'transform 0.3s ease-out' }}
                  >
-                    <img src={nextImageSrc} alt="next" className="w-full h-full object-contain opacity-50" />
+                    <img src={nextImageSrc} alt="" className="w-full h-full object-contain opacity-50" />
                  </div>
                  
                  <div className="absolute bottom-2 right-2 md:hidden bg-black/20 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm pointer-events-none z-10">
@@ -195,7 +208,7 @@ export default function ProductDetail() {
                     >
                       <img 
                         src={img} 
-                        alt={`thumbnail ${index}`} 
+                        alt={`${product.title} - ảnh ${index + 1}`} 
                         className="w-full h-full object-contain rounded-lg"
                       />
                     </div>

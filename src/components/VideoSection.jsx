@@ -1,6 +1,5 @@
 import { FaRegClock, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { FiCheckCircle } from "react-icons/fi";
-import { IoPlayOutline } from "react-icons/io5";
 import { PiPlusCircleBold } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
 
@@ -12,11 +11,13 @@ export default function VideoSection() {
       </p>
 
       {/* Video Section */}
-      <div className="relative mt-4 flex w-full items-center justify-center">
-        <img className="w-full" src="/video-bg.png" alt="Video" />
-        <button className="absolute flex size-[60px] items-center justify-center rounded-full bg-primary-start md:size-[100px]">
-          <IoPlayOutline className="ml-2 size-10 text-white md:size-16" />
-        </button>
+      <div className="mt-4 flex w-full items-center justify-center">
+        <img
+          className="w-full rounded-2xl"
+          src="/video-bg.png"
+          alt="Đội ngũ chuyên gia y tế LUTA LIFE"
+          loading="lazy"
+        />
       </div>
 
       {/* Title & description */}
@@ -42,16 +43,19 @@ export default function VideoSection() {
       <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#E0F2FE] via-[#EDE9FE] to-[#FCE7F3] p-6 md:p-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <PhoneCard phone="+1 281-675-2886" />
-          <ContactCard Icon={MdEmail} title="Email" text="Lutalifeusa@gmail.com" />
+          <ContactCard
+            Icon={MdEmail}
+            title="Email"
+            text="Lutalifeusa@gmail.com"
+            href="mailto:Lutalifeusa@gmail.com"
+          />
           <ContactCard
             Icon={FaMapMarkerAlt}
-            title="Address"
+            title="Địa chỉ"
             text="11462 Pagemill Rd, Dallas, TX 75243"
+            href="https://maps.google.com/?q=11462+Pagemill+Rd,+Dallas,+TX+75243"
           />
-          <CertificationCard
-            title="Certification"
-            image="/kiemdinh.png"
-          />
+          <CertificationCard title="Chứng nhận" image="/kiemdinh.png" />
         </div>
       </div>
     </div>
@@ -67,13 +71,19 @@ function Item({ Icon = FaRegClock, title = "" }) {
   );
 }
 
-function ContactCard({ Icon, title, text }) {
+function ContactCard({ Icon, title, text, href }) {
+  const external = href?.startsWith("http");
   return (
-    <div className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 text-center shadow hover:shadow-lg transition">
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 text-center shadow hover:shadow-lg transition"
+    >
       <Icon className="mb-4 size-8 text-primary-start" />
       <h4 className="font-semibold text-lg leading-snug">{title}</h4>
-      <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
-    </div>
+      <p className="text-gray-600 text-sm leading-relaxed break-words">{text}</p>
+    </a>
   );
 }
 
@@ -84,7 +94,7 @@ function PhoneCard({ phone }) {
       className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 text-center shadow hover:shadow-lg transition"
     >
       <FaPhoneAlt className="mb-4 size-8 text-primary-start" />
-      <h4 className="font-semibold text-lg leading-snug">Phone</h4>
+      <h4 className="font-semibold text-lg leading-snug">Điện thoại</h4>
       <p className="text-gray-600 text-sm leading-relaxed">{phone}</p>
     </a>
   );
@@ -94,7 +104,7 @@ function CertificationCard({ title, image }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white px-6 py-5 text-center shadow hover:shadow-lg transition">
       <h4 className="mb-3 font-semibold text-lg leading-snug">{title}</h4>
-      <img src={image} alt="certification" className="h-24 object-contain" />
+      <img src={image} alt="Giấy chứng nhận kiểm định sản phẩm" className="h-24 object-contain" loading="lazy" />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 // Giả sử file json nằm ở ../data/services.json, hãy điều chỉnh nếu khác
 import services from "../data/services.json"; 
@@ -17,16 +17,20 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="max-w-screen-md mx-auto p-6 text-center text-gray-500">
-        Không tìm thấy bài viết. Vui lòng kiểm tra lại đường dẫn.
-      </div>
+      <>
+        <Navbar />
+        <div className="mx-auto max-w-screen-md px-6 pb-20 pt-40 text-center text-gray-500">
+          <p>Không tìm thấy bài viết. Vui lòng kiểm tra lại đường dẫn.</p>
+          <a href="/" className="mt-4 inline-block font-semibold text-[#1678F2] underline">Về trang chủ</a>
+        </div>
+      </>
     );
   }
 
   return (
     <div>
       <Navbar />
-      <div className="max-w-screen-md mx-auto px-4 py-10">
+      <div className="max-w-screen-md mx-auto px-4 pb-10 pt-28 md:pt-32">
         {/* === COVER IMAGE & TITLE === */}
         <div className="mb-10 text-center">
           <img
@@ -101,7 +105,7 @@ export default function ServiceDetail() {
                   </figure>
                 );
 
-              case "list":
+              case "list": {
                 const ListTag = block.style === "unordered" ? "ul" : "ol";
                 const listClass = block.style === "unordered" ? "list-disc" : "list-decimal";
                 return (
@@ -119,6 +123,7 @@ export default function ServiceDetail() {
                     ))}
                   </ListTag>
                 );
+              }
 
               case "quote":
                 return (
@@ -126,7 +131,7 @@ export default function ServiceDetail() {
                     key={index}
                     className="border-l-4 border-blue-600 bg-blue-50 pl-4 py-4 pr-4 italic text-gray-800 my-8 rounded-r-lg"
                   >
-                    <p className="mb-2">"{block.text}"</p>
+                    <p className="mb-2">&ldquo;{block.text}&rdquo;</p>
                     {block.by && (
                       <footer className="text-sm text-gray-600 font-semibold not-italic text-right">
                         — {block.by}
@@ -160,9 +165,20 @@ export default function ServiceDetail() {
                   </div>
                 );
 
-              case "video":
+              case "video": {
+                // File video trực tiếp (.mp4/.webm) dùng thẻ <video>; YouTube/Vimeo dùng iframe
+                const isFile = /\.(mp4|webm|ogg)(\?|$)/i.test(block.url || "");
                 return (
                   <figure key={index} className="my-8">
+                    {isFile ? (
+                      <video
+                        src={block.url}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="w-full rounded-xl shadow-lg"
+                      />
+                    ) : (
                     <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-lg">
                       <iframe
                         src={block.url}
@@ -171,8 +187,10 @@ export default function ServiceDetail() {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
+                        loading="lazy"
                       />
                     </div>
+                    )}
                     {block.caption && (
                       <figcaption className="mt-3 text-sm text-gray-500 text-center italic">
                         {block.caption}
@@ -180,6 +198,7 @@ export default function ServiceDetail() {
                     )}
                   </figure>
                 );
+              }
 
               default:
                 return null;

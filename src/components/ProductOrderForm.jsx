@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
@@ -46,6 +46,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (status === "loading") return;
     setStatus("loading");
 
     const orderId = `LU${Date.now().toString().slice(-8)}`;
@@ -116,7 +117,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
           <div className="flex items-center justify-between gap-3 px-5 py-3 bg-[#F2F7FF] border-b border-blue-100 shrink-0">
             <div className="flex items-center gap-3">
               <img
-                src={product.cover} alt="product"
+                src={product.cover} alt={product.title}
                 className="w-12 h-12 object-cover rounded-lg border border-gray-200 bg-white shadow-sm shrink-0"
               />
               <div>
@@ -132,12 +133,12 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 px-5 py-4 overflow-y-auto flex-1">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
                 <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Họ và tên</label>
                 <input
                   required name="name" value={formData.name} onChange={handleChange}
-                  type="text" placeholder="John Nguyen"
+                  type="text" placeholder="John Nguyen" autoComplete="name"
                   className={inputCls} style={{ fontSize: 16 }}
                 />
               </div>
@@ -145,7 +146,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
                 <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Điện thoại</label>
                 <input
                   required name="phone" value={formData.phone} onChange={handleChange}
-                  type="tel" placeholder="(+1) 234 567 890"
+                  type="tel" placeholder="(+1) 234 567 890" autoComplete="tel"
                   className={inputCls} style={{ fontSize: 16 }}
                 />
               </div>
@@ -155,7 +156,7 @@ export default function ProductOrderForm({ product, quantity, onClose }) {
               <label className="block text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Địa chỉ nhận hàng (USA)</label>
               <input
                 required name="address" value={formData.address} onChange={handleChange}
-                type="text" placeholder="1234 Main St, San Jose, CA 95122"
+                type="text" placeholder="1234 Main St, San Jose, CA 95122" autoComplete="street-address"
                 className={inputCls} style={{ fontSize: 16 }}
               />
             </div>

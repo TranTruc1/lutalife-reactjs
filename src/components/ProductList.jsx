@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCard from "./ui/ProductCard";
 import products from "../data/products.json";
 

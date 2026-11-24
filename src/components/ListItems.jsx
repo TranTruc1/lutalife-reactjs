@@ -1,4 +1,3 @@
-import React from "react";
 import { FaRegClock } from "react-icons/fa6";
 import { FiCheckCircle } from "react-icons/fi";
 import { PiPlusCircleBold } from "react-icons/pi";

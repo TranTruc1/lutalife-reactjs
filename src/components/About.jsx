@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonForm } from "./ui";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -9,7 +8,8 @@ export default function About() {
         <img
           className="custom-animate size-[85%] object-contain md:size-full"
           src="/about.png"
-          alt="About"
+          alt="Dr. Matthew Anderson - chuyên gia sức khỏe LUTA LIFE"
+          loading="lazy"
         />
       </div>
 

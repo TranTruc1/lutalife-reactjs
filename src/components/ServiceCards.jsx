@@ -1,4 +1,3 @@
-import React from "react";
 import ServiceCard from "./ui/ServiceCard";
 import services from "../data/services.json";
 

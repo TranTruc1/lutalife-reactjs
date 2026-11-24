@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
@@ -31,7 +30,7 @@ export default function InvoicePage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       <Navbar />
 
-      <div className="max-w-lg mx-auto px-4 py-10 md:py-16">
+      <div className="max-w-lg mx-auto px-4 pb-10 pt-28 md:pb-16 md:pt-32 print:pt-4">
 
         {/* Badge thành công */}
         <div className="flex flex-col items-center mb-8">
@@ -61,7 +60,7 @@ export default function InvoicePage() {
 
           {/* Sản phẩm */}
           <div className="flex items-center gap-4 px-6 py-5 border-b border-gray-100">
-            <img src={product.cover} alt="product" className="w-16 h-16 object-cover rounded-xl border border-gray-200 bg-gray-50 shadow-sm shrink-0" />
+            <img src={product.cover} alt={product.title} className="w-16 h-16 object-cover rounded-xl border border-gray-200 bg-gray-50 shadow-sm shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="font-bold text-[#031432] leading-tight line-clamp-2">{product.title}</p>
               <p className="text-sm text-gray-400 mt-1">Số lượng: <span className="font-semibold text-gray-700">{quantity}</span></p>
@@ -91,7 +90,7 @@ export default function InvoicePage() {
         </p>
 
         {/* Nút */}
-        <div className="flex flex-col gap-3 mt-8">
+        <div className="flex flex-col gap-3 mt-8 print:hidden">
           <button
             onClick={() => window.print()}
             className="w-full py-3.5 rounded-full border-2 border-[#1678F2] text-[#1678F2] font-bold text-base transition hover:bg-[#F2F7FF]"

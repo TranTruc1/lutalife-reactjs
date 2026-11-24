@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import "./BookForm.css";
 
@@ -10,6 +10,18 @@ export default function BookAnAppointment({ onClose }) {
   const [status, setStatus] = useState("idle");
   const [countdown, setCountdown] = useState(5);
   const [ip, setIp] = useState("unknown");
+
+  // Khoá cuộn trang phía sau và cho phép đóng bằng phím Esc
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
 
   useEffect(() => {
     fetch("https://api.ipify.org?format=json")
@@ -34,12 +46,19 @@ export default function BookAnAppointment({ onClose }) {
       }, 1000);
     }
     return () => { if (timer) clearInterval(timer); };
-  }, [status]);
+  }, [status, onClose]);
+
+  // Bấm ra ngoài: nếu đã nhập thông tin thì hỏi lại trước khi đóng
+  const handleBackdrop = () => {
+    const hasData = Object.values(form).some((v) => v.trim() !== "");
+    if (!hasData || window.confirm("Bạn đã nhập thông tin. Bạn có chắc muốn đóng không?")) onClose();
+  };
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (status === "loading") return;
     setStatus("loading");
 
     const payload = {
@@ -66,21 +85,21 @@ export default function BookAnAppointment({ onClose }) {
   return (
     <>
       {/* Form chính */}
-      <div className="overlay">
-        <form onSubmit={handleSubmit} className="book-form">
-          <button type="button" className="form-close" onClick={onClose}>✕</button>
+      <div className="overlay" onClick={handleBackdrop}>
+        <form onSubmit={handleSubmit} className="book-form" onClick={(e) => e.stopPropagation()}>
+          <button type="button" className="form-close" onClick={onClose} aria-label="Đóng">✕</button>
           <h2 className="form-title">Đặt lịch khám</h2>
 
           <input
-            type="text" name="name" placeholder="Họ và tên"
+            type="text" name="name" placeholder="Họ và tên" autoComplete="name"
             value={form.name} onChange={handleChange} required
           />
           <input
-            type="text" name="phone" placeholder="Số điện thoại"
+            type="tel" name="phone" placeholder="Số điện thoại" autoComplete="tel" inputMode="tel"
             value={form.phone} onChange={handleChange} required
           />
           <input
-            type="text" name="address" placeholder="Địa chỉ"
+            type="text" name="address" placeholder="Địa chỉ" autoComplete="street-address"
             value={form.address} onChange={handleChange}
           />
           <textarea
@@ -88,7 +107,7 @@ export default function BookAnAppointment({ onClose }) {
             value={form.note} onChange={handleChange}
           />
 
-          <button type="submit" className="form-submit">Gửi thông tin</button>
+          <button type="submit" className="form-submit" disabled={status === "loading"}>Gửi thông tin</button>
 
           {status === "error" && (
             <p style={{ color: "red", textAlign: "center", fontSize: "0.9rem" }}>

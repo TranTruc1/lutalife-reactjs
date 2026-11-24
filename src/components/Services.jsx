@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonForm } from "./ui";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -15,14 +14,15 @@ export default function Services() {
         <p className="mb-4 max-w-[485px] text-para">
           Chiết xuất thiên nhiên từ Hawthorn, Garlic và Vitamin C giúp duy trì huyết áp ổn định, tăng cường sức khỏe tim mạch.
         </p>
-                <ButtonForm title="Đặt lịch khám miễn phí!" Icon={FaWhatsapp} />
+        <ButtonForm title="Đặt lịch khám miễn phí!" Icon={FaWhatsapp} />
       </div>
 
       <div className="max-h-[660px] max-w-[622px]">
         <img
           className="custom-animate size-[85%] object-contain md:size-full"
           src="/service.png"
-          alt="About"
+          alt="Sản phẩm hỗ trợ huyết áp và tim mạch LUTA LIFE"
+          loading="lazy"
         />
       </div>
     </div>

@@ -1,196 +1,114 @@
+import { useEffect, useState } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
-import Button from "./ui/ButtonForm";
-import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import ButtonForm from "./ui/ButtonForm";
+import { scrollToSection } from "./scroll";
 
-export default function Navbar({ aboutRef, servicesRef, contactRef }) {
+const LINKS = [
+  { id: "top", label: "Trang chủ" },
+  { id: "san-pham", label: "Sản phẩm" },
+  { id: "gioi-thieu", label: "Giới thiệu" },
+  { id: "dich-vu", label: "Dịch vụ" },
+  { id: "lien-he", label: "Liên hệ" },
+];
+
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token"); 
-  const role = localStorage.getItem("role");   
+  const { pathname } = useLocation();
 
-  const managementLink = role === "admin" ? "/admin/users" : "/admin/appointments";
+  // Đóng menu điện thoại bằng phím Esc
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => e.key === "Escape" && setIsOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
 
-  const scrollToSection = (ref) => {
-    if (ref?.current) {
-      const y = ref.current.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const goTo = (id) => {
     setIsOpen(false);
+    if (pathname !== "/") {
+      // Đang ở trang con: về trang chủ rồi cuộn tới mục cần xem
+      navigate("/", { state: id === "top" ? null : { scrollTo: id } });
+      if (id === "top") window.scrollTo(0, 0);
+      return;
+    }
+    if (id === "top") window.scrollTo({ top: 0, behavior: "smooth" });
+    else scrollToSection(id);
   };
 
-  const handleLogout = () => {
-    if (window.confirm("Bạn có chắc muốn đăng xuất?")) {
-      localStorage.removeItem("token");
-      localStorage.removeItem("role");
-      navigate("/login");
-      setIsOpen(false);
-    }
-  };
+  const linkCls = (i) =>
+    `font-medium transition-colors hover:text-primary-start ${
+      i === 0 ? "text-primary-start" : "text-para"
+    }`;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full bg-[#F2F7FF] bg-opacity-95 p-3 backdrop-blur-md shadow-sm transition-all">
-      <div className="mx-auto flex max-w-screen-xl items-center justify-between">
-        <a href="/">
+    <header className="fixed left-0 right-0 top-0 z-50 w-full bg-[#F2F7FF]/95 p-3 shadow-sm backdrop-blur-md print:hidden">
+      <nav
+        className="mx-auto flex max-w-screen-xl items-center justify-between gap-4"
+        aria-label="Điều hướng chính"
+      >
+        <Link to="/" onClick={() => goTo("top")} aria-label="LUTA LIFE - về trang chủ">
           <img
             className="h-[50px] w-[146px] object-contain"
             src="/logo.png"
-            alt="Logo"
+            alt="LUTA LIFE"
           />
-        </a>
+        </Link>
 
-        {/* Menu Desktop */}
-        <ul className="hidden items-center gap-10 md:flex">
-          <li>
-            <button
-              onClick={scrollToTop}
-              className="text-primary-start hover:text-primary-start hover:opacity-100 font-medium transition-colors"
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection(aboutRef)}
-              className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium transition-colors"
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection(servicesRef)}
-              className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium transition-colors"
-            >
-              Services
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection(contactRef)}
-              className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium transition-colors"
-            >
-              Contact
-            </button>
-          </li>
-
-          {token && (
-            <>
-              <li>
-                <Link 
-                  to={managementLink} 
-                  className="text-blue-600 font-bold hover:underline"
-                >
-                  Quản lý
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={handleLogout}
-                  className="text-red-500 font-bold border border-red-500 px-3 py-1 rounded hover:bg-red-50 transition"
-                >
-                  Đăng xuất
-                </button>
-              </li>
-            </>
-          )}
+        {/* Menu máy tính */}
+        <ul className="hidden items-center gap-8 lg:flex">
+          {LINKS.map((l, i) => (
+            <li key={l.id}>
+              <button type="button" onClick={() => goTo(l.id)} className={linkCls(i)}>
+                {l.label}
+              </button>
+            </li>
+          ))}
         </ul>
 
-        <Button className="hidden md:flex"/>
+        <ButtonForm title="Đặt lịch tư vấn" className="hidden whitespace-nowrap lg:flex" />
 
-        {/* Menu Mobile */}
-        <div className="relative md:hidden">
-          {isOpen ? (
-            <IoMdClose
-              onClick={() => setIsOpen(false)}
-              className="size-7 cursor-pointer text-primary-end relative z-50" // Icon luôn nổi lên trên backdrop
-            />
-          ) : (
-            <HiMiniBars3BottomRight
-              onClick={() => setIsOpen(true)}
-              className="size-7 cursor-pointer text-primary-end"
-            />
-          )}
+        {/* Menu điện thoại / máy tính bảng */}
+        <div className="relative lg:hidden">
+          <button
+            type="button"
+            onClick={() => setIsOpen((o) => !o)}
+            className="relative z-50 p-1 text-primary-end"
+            aria-label={isOpen ? "Đóng menu" : "Mở menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? (
+              <IoMdClose className="size-7" />
+            ) : (
+              <HiMiniBars3BottomRight className="size-7" />
+            )}
+          </button>
 
           {isOpen && (
             <>
-              {/* ✅ BACKDROP: Lớp phủ full màn hình để bắt sự kiện click ra ngoài */}
-              <div 
-                className="fixed inset-0 z-40 bg-black/20 w-screen h-screen" 
+              {/* Lớp phủ: bấm ra ngoài để đóng menu */}
+              <div
+                className="fixed inset-0 z-40 h-screen w-screen bg-black/20"
                 onClick={() => setIsOpen(false)}
-              ></div>
-
-              {/* ✅ MENU: Width 70% màn hình */}
-              <div className="absolute right-0 top-10 w-[70vw] rounded-2xl border bg-white p-4 shadow-lg z-50 animate-fade-in-up">
-                <ul className="mb-6 flex flex-col items-center gap-4">
-                  <li>
-                    <button
-                      onClick={scrollToTop}
-                      className="text-primary-start hover:text-primary-start hover:opacity-100 font-medium"
-                    >
-                      Home
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => scrollToSection(aboutRef)}
-                      className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium"
-                    >
-                      About
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => scrollToSection(servicesRef)}
-                      className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium"
-                    >
-                      Services
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => scrollToSection(contactRef)}
-                      className="text-para opacity-80 hover:text-primary-start hover:opacity-100 font-medium"
-                    >
-                      Contact
-                    </button>
-                  </li>
-
-                  {token && (
-                    <>
-                      <li className="w-full border-t pt-2 mt-2">
-                        <Link 
-                          to={managementLink}
-                          className="block text-center text-blue-600 font-bold"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          Vào trang Quản lý
-                        </Link>
-                      </li>
-                      <li>
-                        <button
-                          onClick={handleLogout}
-                          className="text-red-500 font-bold w-full text-center"
-                        >
-                          Đăng xuất
-                        </button>
-                      </li>
-                    </>
-                  )}
+              />
+              <div className="absolute right-0 top-12 z-50 w-[min(80vw,320px)] rounded-2xl border bg-white p-4 shadow-lg">
+                <ul className="mb-5 flex flex-col items-center gap-4">
+                  {LINKS.map((l, i) => (
+                    <li key={l.id}>
+                      <button type="button" onClick={() => goTo(l.id)} className={linkCls(i)}>
+                        {l.label}
+                      </button>
+                    </li>
+                  ))}
                 </ul>
-
-                <Button className="w-full" />
+                <ButtonForm title="Đặt lịch tư vấn" className="w-full justify-center" />
               </div>
             </>
           )}
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

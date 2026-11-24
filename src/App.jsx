@@ -1,19 +1,16 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  useLocation,
 } from "react-router-dom";
-import axios from "axios";
-import { API_BASE } from "./components/api";
 
-// --- Import các trang con ---
 import ServiceDetail from "./components/ServiceDetail";
 import ProductDetail from "./components/ProductDetail";
 import InvoicePage from "./components/InvoicePage";
+import Editor from "./components/Editor";
 
-// --- Import các thành phần giao diện ---
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ListItems from "./components/ListItems";
@@ -22,120 +19,72 @@ import Services from "./components/Services";
 import ServiceCards from "./components/ServiceCards";
 import VideoSection from "./components/VideoSection";
 import ProductList from "./components/ProductList";
-import Login from "./components/Login";
+import { scrollToSection } from "./components/scroll";
 
-// --- Import trang Admin ---
-import AdminUsers from "./components/AdminUsers";
-import AdminAppointments from "./components/AppointmentsPage";
-import Editor from "./components/Editor";
-
-// 1️⃣ Component Trang Chủ (Landing Page)
+// Trang chủ. Mỗi khối có id để menu cuộn tới, kể cả khi bấm menu từ trang khác.
 function MainPage() {
-  const aboutRef = useRef(null);
-  const servicesRef = useRef(null);
-  const contactRef = useRef(null);
-  const productsRef = useRef(null);
+  const { state } = useLocation();
+
+  useEffect(() => {
+    if (state?.scrollTo) {
+      // đợi ảnh/khối render xong rồi mới cuộn
+      const t = setTimeout(() => scrollToSection(state.scrollTo), 120);
+      return () => clearTimeout(t);
+    }
+  }, [state]);
 
   return (
-    <div className="w-full overflow-x-hidden relative">
-      <Navbar
-        aboutRef={aboutRef}
-        servicesRef={servicesRef}
-        contactRef={contactRef}
-      />
+    <div className="relative w-full overflow-x-hidden">
+      <Navbar />
 
       <div className="bg-[#F2F7FF]">
         <Hero />
         <ListItems />
       </div>
 
-      <div ref={productsRef} className="bg-white">
+      <div id="san-pham" className="bg-white">
         <ProductList />
       </div>
 
-      <div ref={aboutRef}>
+      <div id="gioi-thieu">
         <About />
       </div>
 
-      <div className="bg-[#F2F7FF]" ref={servicesRef}>
+      <div id="dich-vu" className="bg-[#F2F7FF]">
         <Services />
         <ServiceCards />
       </div>
 
-      <div ref={contactRef}>
+      <div id="lien-he">
         <VideoSection />
       </div>
     </div>
   );
 }
 
-// 2️⃣ Component bảo vệ route Admin
-function PrivateRoute({ children }) {
-  const token = localStorage.getItem("token");
-  return token ? children : <Navigate to="/login" />;
-}
-
-// 3️⃣ App chính
-function App() {
-  const [user, setUser] = useState(null);
-
+export default function App() {
   useEffect(() => {
-    if (API_BASE) {
-      axios
-        .get(API_BASE + "/api/ping")
-        .then(() => console.log("✅ Backend woke up."))
-        .catch(() => console.warn("⚠️ Backend not responding yet"));
+    // Dọn mật khẩu từng được lưu dạng chữ thường bởi trang đăng nhập cũ (đã gỡ).
+    try {
+      ["savedPassword", "savedPhone", "token", "role"].forEach((k) =>
+        localStorage.removeItem(k),
+      );
+    } catch {
+      /* trình duyệt chặn localStorage: bỏ qua */
     }
   }, []);
 
   return (
     <Router>
       <Routes>
-        {/* --- ROUTE CÔNG KHAI --- */}
-
         <Route path="/" element={<MainPage />} />
-
         <Route path="/product/:slug" element={<ProductDetail />} />
-
-        {/* ✅ Trang hoá đơn sau khi đặt hàng */}
         <Route path="/invoice" element={<InvoicePage />} />
-
+        {/* Công cụ soạn nội dung JSON nội bộ (không gửi dữ liệu đi đâu) */}
         <Route path="/ngungonzzxz" element={<Editor />} />
-
-        <Route
-          path="/login"
-          element={
-            <Login
-              onLogin={(data) => {
-                setUser(data);
-              }}
-            />
-          }
-        />
-
-        {/* /:slug phải để SAU /invoice và /product/:slug để không bị conflict */}
+        {/* Bài viết dịch vụ: /:slug khớp sau cùng nhờ cơ chế xếp hạng route */}
         <Route path="/:slug" element={<ServiceDetail />} />
-
-        {/* --- ROUTE ADMIN --- */}
-        <Route
-          path="/admin/users"
-          element={
-            <PrivateRoute>
-              <AdminUsers />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/admin/appointments"
-          element={
-            <PrivateRoute>
-              <AdminAppointments />
-            </PrivateRoute>
-          }
-        />
       </Routes>
     </Router>
   );
 }
-
-export default App;

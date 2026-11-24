@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -27,6 +26,7 @@ export default function ProductCard({ product }) {
         <img
           src={product.cover}
           alt={product.title}
+          loading="lazy"
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         
@@ -59,11 +59,12 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        <Link to={`/product/${product.slug}`} className="w-full mt-1">
-          <button className="flex w-full items-center justify-center gap-1 rounded md:rounded-full bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-1.5 md:py-3 text-[10px] md:text-sm font-bold text-white shadow hover:opacity-90 transition-all">
-            <span>Buy</span> 
-            <FaArrowRight className="hidden md:block"/>
-          </button>
+        <Link
+          to={`/product/${product.slug}`}
+          className="mt-1 flex w-full items-center justify-center gap-1 rounded bg-gradient-to-r from-[#65A8FB] to-[#1678F2] py-1.5 text-[11px] font-bold text-white shadow transition-all hover:opacity-90 md:rounded-full md:py-3 md:text-sm"
+        >
+          <span>Mua ngay</span>
+          <FaArrowRight className="hidden md:block" />
         </Link>
       </div>
     </div>
